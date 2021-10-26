@@ -20,7 +20,7 @@
                 <label for="email">Email</label>
                 <input placeholder="<?= isset($validate) ? display_error($validate, 'email') : '' ?>" name="email" type="text" /><br />
                 <label for="password">Password</label>
-                <input value="<?= isset($validate) ? display_error($validate, 'password') : '' ?>" name="password" type="password" /><br />
+                <input name="password" type="password" /><textarea class="password_error"><?= isset($validate) ? display_error($validate, 'password') : '' ?></textarea><br />
                 <input type="submit" value="Login" name="login" /><br />
             </form>
         </div>

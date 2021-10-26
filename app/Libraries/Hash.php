@@ -8,4 +8,12 @@ class Hash
     {
         return password_hash($password, PASSWORD_BCRYPT);
     }
+    public static function check($submitted_password, $db_password)
+    {
+        if (password_verify($submitted_password, $db_password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

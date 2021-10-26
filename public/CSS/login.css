@@ -94,3 +94,13 @@ label {
   margin-left: 30px;
   margin-top: 15px;
 }
+.password_error {
+  border: none;
+  resize: none !important;
+  color: #ff3502;
+  position: absolute;
+  bottom: -59px;
+  right: -134px;
+  background: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}

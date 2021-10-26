@@ -111,7 +111,19 @@ class Register extends BaseController
         if (!$validate) {
             return view('login', ['validate' => $this->validator]);
         } else {
-            echo 'Login Success';
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+            $userModel = new \App\Models\UserModel();
+
+            $user_info = $userModel->where('email', $email)->first();
+            $check_password = Hash::check($password, $user_info['password']);
+
+            if (!$check_password) {
+                session()->setFlashdata('fail', 'Incorrect Password');
+                return redirect()->to('Register/auth')->withInput();
+            } else {
+                return redirect()->to('Landing');
+            }
         }
     }
 }

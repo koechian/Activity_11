@@ -65,7 +65,7 @@
     </div>
     <section id="one">
         <div class="pop_up">
-            <p>Hello Ian ?></p>
+            <p>Hello Ian</p>
         </div>
         <div class="wrapper">
             <div class="container">
