@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use Codeigniter\Controller;
 use App\Libraries\Hash;
 
 
@@ -19,14 +18,20 @@ class Register extends BaseController
     public function new_user()
     {
         $validate = $this->validate([
-            'name' => [
+            'first_name' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Your full name is needed'
+                    'required' => 'This field cannot be left blank'
+                ]
+            ],
+            'last_name' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'This field cannot be blank'
                 ]
             ],
             'email' => [
-                'rules' => 'required|valid_email|is_unique[users.email]',
+                'rules' => 'required|valid_email|is_unique[tbl_users.email]',
                 'erors' => [
                     'required' => 'Email is required',
                     'valid_email' => 'This email is invalid',
@@ -57,14 +62,18 @@ class Register extends BaseController
         if (!$validate) {
             return view('register', ['validate' => $this->validator]);
         } else {
-            $name = $this->request->getPost('first_name');
+            $first_name = $this->request->getPost('first_name');
+            $last_name = $this->request->getPost('last_name');
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
+            $gender = $this->request->getPost('gender_select');
 
             $values = [
-                'name' => $name,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
                 'email' => $email,
-                'password' => Hash::make($password)
+                'password' => Hash::make($password),
+                'gender' => $gender
             ];
 
             $userModel = new \App\Models\UserModel();
@@ -81,7 +90,7 @@ class Register extends BaseController
     {
         $validate = $this->validate([
             'email' => [
-                'rules' => 'required|valid_email|is_not_unique[users.email]',
+                'rules' => 'required|valid_email|is_not_unique[tbl_users.email]',
                 'errors' => [
                     'required' => 'Email is required',
                     'valid_email' => 'This email is invalid',

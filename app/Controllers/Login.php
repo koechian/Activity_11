@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use Config\Validation;
-
 class Login extends BaseController
 {
     public function index()
