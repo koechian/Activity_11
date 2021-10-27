@@ -120,7 +120,8 @@ form input {
   transition: ease 0.3s;
 }
 .female img:hover,
-.male img:hover {
+.male img:hover,
+.children div img:hover {
   transform: scale(1.007);
 }
 .container {
@@ -179,12 +180,20 @@ form input {
   font-family: "Ubuntu";
   font-size: 50px;
   text-transform: uppercase;
-  color: #4349c7;
   top: 50%;
+  z-index: 100;
+}
+#span1 {
+  top: 10px !important;
+  left: 170px;
+}
+#span1 a {
+  color: white !important;
 }
 .children_container div span a {
   text-decoration: none;
   transition: ease 0.5s;
+  color: black;
 }
 .children_container div span a:hover {
   color: coral;

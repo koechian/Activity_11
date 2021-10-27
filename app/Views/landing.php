@@ -68,7 +68,7 @@
   <section class="children">
     <div class="children_container">
       <div>
-        <span><a href="">Ages 0-3</a></span>
+        <span id="span1"><a href="">Ages 0-3</a></span>
         <img src="/Assets/0-3.png" />
       </div>
       <div>
