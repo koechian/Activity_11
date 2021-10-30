@@ -10,7 +10,6 @@ body {
   width: 100vw;
   height: 100vh;
   background: url(../Assets/back_login.jpg);
-  filter: blur(3px);
 }
 .login_wrapper {
   position: absolute;
@@ -96,7 +95,7 @@ label {
 }
 .password_error {
   border: none;
-  resize: none !important;
+  /* resize: none !important; */
   color: #ff3502;
   position: absolute;
   bottom: -59px;

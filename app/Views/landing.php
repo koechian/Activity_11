@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="/CSS/landing.css" />
   <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Rampart+One&family=Ubuntu:wght@500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -43,13 +46,13 @@
     <div class="container">
       <div class="female">
         <a href="">
-          <img src="/assets/female.png" alt="" srcset="" />
+          <img src="/Assets/female.png" alt="" srcset="" />
           <span id="women_label">WOMEN</span>
         </a>
       </div>
       <div class="male">
         <a href="">
-          <img src="/assets/male.png" alt="" srcset="" />
+          <img src="/Assets/male.png" alt="" srcset="" />
           <span id="men_label">MEN</span>
         </a>
       </div>

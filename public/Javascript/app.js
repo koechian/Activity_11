@@ -31,4 +31,32 @@ $(document).ready(function(){
             input.removeClass("valid").addClass("invalid");
         }
     });
+
+    $("#login").on('click',function(){
+
+        var email=$("#email").val();
+        var password=$("#password").val();
+
+        if (email==""||password=="") {
+            alert("Please fill all fields");
+            
+        }else{
+        $.ajax({
+            url:'login.php',
+            method:'post',
+            data:{
+                login:1,
+                emailPHP:email,
+                passwordPHP:password
+
+            },
+            success:function(response){
+                console.log('response');
+
+            },
+            datatype:'text'
+        })
+    }
+
+    });
 })
