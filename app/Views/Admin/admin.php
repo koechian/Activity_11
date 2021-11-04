@@ -47,7 +47,6 @@
 
     </nav>
     <!-- /.navbar -->
-
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
@@ -99,7 +98,7 @@
                 <li class="nav-item">
                 <li class="nav-header">Quick Links</li>
                 <li class="nav-item">
-                  <a href="pages/calendar.html" class="nav-link">
+                  <a href="<?= site_url('Admin/Categories') ?>" class="nav-link">
                     <i class="fa fa-th-large"></i>
                     <p>
                       Item Categories
@@ -357,7 +356,6 @@
       </div>
       <!-- /.sidebar -->
     </aside>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->

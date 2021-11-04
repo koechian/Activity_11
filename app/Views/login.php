@@ -17,13 +17,13 @@
         <span>Log In</span><br /><br />
         <span>Continue to Gushi</span>
         <div class="form">
-            <form action="<?= base_url('Register/auth') ?>" method="POST">
+            <form action="<?= base_url('Login/getLogin') ?>" method="POST">
                 <?= csrf_field(); ?>
                 <label for="email">Email</label>
-                <input class="invalid" id="email" placeholder="<?= isset($validate) ? display_error($validate, 'email') : '' ?>" name="email" type="text" /><br />
+                <input id="email" placeholder="<?= isset($validate) ? display_error($validate, 'email') : '' ?>" name="email" type="text" /><br />
                 <label for="password">Password</label>
-                <input class="invalid" id="password" name="password" type="password" /><textarea class="password_error"><?= isset($validate) ? display_error($validate, 'password') : '' ?></textarea><br />
-                <input id="login" type="button" value="Login" name="login" /><br />
+                <input id="password" name="password" type="password" /><textarea class="password_error"><?= isset($validate) ? display_error($validate, 'password') : '' ?></textarea><br />
+                <input id="login" type="submit" value="Login" name="login" /><br />
             </form>
         </div>
         <span>New to Gushi? &nbsp <a href="<?= site_url('Register'); ?>">Get Started</a></span>

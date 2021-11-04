@@ -111,8 +111,8 @@ class Register extends BaseController
         if (!$validate) {
             return view('login', ['validate' => $this->validator]);
         } else {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
+            $email = $this->request->getPost('emailPHP');
+            $password = $this->request->getPost('passwordPHP');
             $userModel = new \App\Models\UserModel();
 
             $user_info = $userModel->where('email', $email)->first();
