@@ -194,17 +194,17 @@
               <div class="col-md-4">
                 <div class="card-header">Add a new Category</div>
                 <div class="card-body">
-                  <form action="<?= base_url('Admin/addCategories') ?>" method="POST" id="add-category">
-                    <?= csrf_field(); ?>
-                    <div class="form-group">
-                      <label for="">Category Name</label>
-                      <input class="form-control" id="category_name" name="category_name" placeholder="Enter new Category" type="text">
-                      <span id="error_name" class="text-danger error-text category_name_error"></span>
-                    </div>
-                    <div class="form-group">
-                      <button id="new-category" class="btn btn-block btn-success">Save</button>
-                    </div>
-                  </form>
+
+                  <?= csrf_field(); ?>
+                  <div class="form-group">
+                    <label for="">Category Name</label>
+                    <input class="form-control" id="category_name" name="category_name" placeholder="Enter new Category" type="text">
+                    <span id="error_name" class="text-danger error-text category_name_error"></span>
+                  </div>
+                  <div class="form-group">
+                    <button id="new-category" class="btn btn-block btn-success">Save</button>
+                  </div>
+
                 </div>
               </div>
             </div>

@@ -2,94 +2,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Zen+Kurenaido&display=swap");
 
-.form input {
-  margin: 10px 5px 10px;
-  height: 30px;
-  width: 220px;
+body {
+  box-sizing: border-box;
+  margin: 0;
 }
 .back {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background: url(../Assets/back_login.jpg);
-  filter: blur(3px);
 }
 .login_wrapper {
   position: absolute;
-  display: block;
-  width: 500px;
-  height: 900px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 850px;
   background: white;
   z-index: 3;
   border-radius: 13px;
-  top: 10%;
+  top: 13vh;
   left: 15vw;
 }
-span {
-  position: absolute;
-}
-span:nth-of-type(1) {
+h1 {
   font-family: "Monda", sans-serif;
   font-size: 35px;
   margin-top: 10%;
   margin-left: 30px;
 }
-span:nth-of-type(2) {
+h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   margin-left: 30px;
   color: #5c5c5c;
   top: 110px;
-}
-span:nth-of-type(3) {
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  margin-left: 30px;
-  color: #5c5c5c;
-  bottom: 30px;
-}
-.form {
-  position: absolute;
-  top: 140px;
-  display: flex;
-  height: 200px;
-  margin-bottom: 20px;
-  margin-left: 30px;
-}
-#submit {
-  color: white;
-  border: none;
-  background: #1e2d2f;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-#submit:hover {
-  background: #4a5152;
-}
-.login_wrapper a {
-  text-decoration: none;
-  color: rgb(167, 50, 29);
-  font-family: "Raleway", sans-serif;
-  font-size: 13px;
-}
-.login_wrapper a:hover {
-  color: #ff3502;
-}
-.options_wrapper {
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
-}
-.options_wrapper a {
-  margin-left: 20px;
 }
 label {
   font-family: "Raleway", sans-serif;
   font-size: 15px;
   display: block;
+  margin-left: 30px;
+  margin-top: 15px;
 }
 select {
-  width: 200px;
+  width: 400px;
+  margin: 30px;
+  height: 50px;
 }
 .logo {
   position: absolute;
@@ -97,22 +55,57 @@ select {
   top: 49%;
   right: 21%;
 }
-.valid {
-  color: #1e2d2f;
-  border: solid 1px #7fb800;
+.content1 {
+  transition: 0.5s ease-out;
 }
-textarea {
+.content2 {
+  transition: 0.5s ease-in;
+}
+input,
+button {
+  margin: 30px;
+  width: 400px;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
+}
+button {
+  color: white;
   border: none;
-  height: 40px;
-  width: 230px;
-  resize: none !important;
-  color: red;
-  font-family: "Zen Kurenaido", sans-serif !important;
-  font-size: 15px !important;
-  display: none;
+  background: #1e2d2f;
+  border-radius: 6px;
+  transition: 0.3s;
 }
-form div {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 30px;
+button:hover {
+  background: #4a5152;
+}
+a {
+  text-decoration: none;
+  color: rgb(167, 50, 29);
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+}
+a:hover {
+  color: #ff3502;
+}
+#options {
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+}
+#options a {
+  margin-left: 20px;
+}
+#span1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  margin-left: 40px;
+  color: #5c5c5c;
+  bottom: 100px;
+}
+#error_tag {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  margin-left: 30px;
+  color: #b23a48;
 }

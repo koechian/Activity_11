@@ -6,14 +6,18 @@ use CodeIgniter\Model;
 
 class LoginModel extends Model
 {
-    function is_valid($email, $password)
+    public function __construct()
     {
-        $this->select('*');
-        $this->from('tbl_users');
-        $this->where('password', $password);
-        $this->where('username', $email);
-        $query = $this->get();
-        $res = $query->result();
-        return $res;
+        parent::__construct();
+    }
+    function checkin($email, $password)
+    {
+        $db = db_connect();
+
+        $res = $db->query("SELECT * FROM tbl_users WHERE email='$email' AND password='$password'");
+
+        $row = $res->getRowArray();
+
+        return $row;
     }
 }

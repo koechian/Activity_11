@@ -13,7 +13,8 @@ body {
 }
 .login_wrapper {
   position: absolute;
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 600px;
   height: 700px;
   background: white;
@@ -22,68 +23,61 @@ body {
   top: 20vh;
   left: 15vw;
 }
-span {
-  position: absolute;
-}
-span:nth-of-type(1) {
+h1 {
   font-family: "Monda", sans-serif;
   font-size: 35px;
   margin-top: 10%;
   margin-left: 30px;
 }
-span:nth-of-type(2) {
+h3 {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   margin-left: 30px;
   color: #5c5c5c;
   top: 110px;
 }
-span:nth-of-type(3) {
+
+#span2 {
   font-family: "Raleway", sans-serif;
   font-size: 12px;
   margin-left: 40px;
   color: #5c5c5c;
   bottom: 100px;
 }
-.form {
-  position: absolute;
-  top: 130px;
-  display: flex;
-  height: 200px;
-  margin-bottom: 20px;
-}
-.form input {
+
+input,
+button {
   margin: 30px;
   width: 400px;
   height: 50px;
   justify-content: center;
   text-align: center;
 }
-.form input:last-of-type {
+button {
   color: white;
   border: none;
   background: #1e2d2f;
   border-radius: 6px;
   transition: 0.3s;
 }
-.form input:last-of-type:hover {
+button:hover {
   background: #4a5152;
 }
-.login_wrapper a {
+a {
   text-decoration: none;
   color: rgb(167, 50, 29);
   font-family: "Raleway", sans-serif;
   font-size: 13px;
 }
-.login_wrapper a:hover {
+a:hover {
   color: #ff3502;
 }
-.options_wrapper {
+#options {
   position: absolute;
   bottom: 50px;
   right: 30px;
 }
-.options_wrapper a {
+#options a {
   margin-left: 20px;
 }
 label {
@@ -93,13 +87,9 @@ label {
   margin-left: 30px;
   margin-top: 15px;
 }
-.password_error {
-  border: none;
-  /* resize: none !important; */
-  color: #ff3502;
-  position: absolute;
-  bottom: -59px;
-  right: -134px;
-  background: transparent;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+#error_tag {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  margin-left: 30px;
+  color: #b23a48;
 }

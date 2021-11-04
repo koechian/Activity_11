@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/register.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/Javascript/app.js"></script>
@@ -26,63 +26,99 @@
     </div>
     <div class="back"></div>
     <div class="login_wrapper">
-        <span>Create an Account</span><br /><br />
-        <span>The Best Fashion Store in Kenya</span>
-        <div class="form">
-            <form id="reg" action="<?= base_url('Register/new_user') ?>" method="POST">
-                <?= csrf_field(); ?>
-                <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
-                <?php endif ?>
-
-                <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                    <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
-                <?php endif ?>
-                <label for="email">Email</label><br>
-                <div>
-                    <input id="email" class="invalid" value="<?= set_value('email') ?>" placeholder="<?= isset($validate) ? display_error($validate, 'email') : '' ?>" type="email" name="email"><textarea class="err">Please enter a valid Email</textarea><br><br>
-                </div>
-                <label for="first_name">First Name</label><br>
-                <div>
-                    <input id="first_name" class="invalid" value="<?= set_value('first_name') ?>" placeholder="<?= isset($validate) ? display_error($validate, 'name') : '' ?>" name="first_name" type="text" />
-                    <textarea class="err">This field cannot be blank</textarea><br /><br>
-                </div>
-                <label for="last_name">Last Name</label>
-                <div>
-                    <input id="last_name" class="invalid" value="<?= set_value('last_name') ?>" placeholder="<?= isset($validate) ? display_error($validate, 'last_name') : '' ?>" name="last_name" type="text" /><textarea class="err">This field cannot be blank</textarea><br /><br>
-                </div>
-                <label for="password">Password</label><br>
-                <div>
-                    <input id="password" class="invalid" value="<?= set_value('password') ?>" placeholder="<?= isset($validate) ? display_error($validate, 'password') : '' ?>" name="password" type="password" /><textarea class="err">This field cannot be blank</textarea><br /><br>
-                </div>
-                <label for="cpassword">Confirm Password</label><br>
-                <div>
-
-                    <input class="invalid" value="<?= set_value('cpassword') ?>" placeholder="<?= isset($validate) ? display_error($validate, 'cpassword') : '' ?>" name="cpassword" type="password" /><textarea class="err">This field cannot be blank</textarea><br /><br>
-                </div>
-                <label for="gender">Gender</label><br>
-                <div>
-
-                </div>
-                <div>
-                    <select form="reg" name="gender_select">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select><br /><br>
-                </div>
-                <div>
-                    <input id="submit" type="submit" value="Create Account" name="submit" /><br />
-                </div>
-            </form>
+        <div class="titles">
+            <h1>Create an Account</h1>
+            <h3>GUSHI | The best in clothing</h3>
         </div>
-        <span>Already have an Account? &nbsp <a href="<?= site_url('Login'); ?>">Login</a></span>
-        <div class="options_wrapper">
-            <a href="">Help</a>
-            <a href="">Privacy</a>
-            <a href="">Terms</a>
+
+        <div style="display: block;" id="content1">
+            <label for="email">Email</label>
+            <input id="email" type="email">
+            <label for="firstname">First Name</label>
+            <input id="firstname" type="text">
+            <label for="lastname">Last Name</label>
+            <input id="lastname" type="text">
+            <button onclick="toggle('content1')" id="next">Next</button>
         </div>
+        <div style="display: none;" id="content2">
+            <span id="error_tag"></span>
+            <label for="password">Password</label>
+            <input id="password" type="password">
+            <label for="confirm">Confirm Password</label>
+            <input id="cpass" type="password">
+            <label for="gender">Gender</label>
+            <select name="" id="">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button id="create">Create Account</button>
+        </div>
+        <div>
+            <span id="span1">Already have an account? &nbsp; <a href="">Login</a></span>
+            <div id="options">
+                <a href="">Help</a>
+                <a href="">Privacy</a>
+                <a href="">Terms and Conditions</a>
+            </div>
+        </div>
+
     </div>
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#create', function() {
+                if ($.trim($('#email').val()).length == 0) {
+                    is_empty = 'Email cannot be empty';
+                    $('#error_tag').text(is_empty);
+                    $('#email').css('border', '1px solid #FCB9B2');
+                } else {
+                    if ($.trim($('#firstname').val()).length == 0 || $.trim($('#lastname').val()).length == 0) {
+                        is_empty = 'Please provide your full name';
+                        $('#error_tag').text(is_empty);
+                        $('#firstname').css('border', '1px solid #FCB9B2');
+                    } else {
+                        if ($.trim($('#password').val()).length == 0 || $.trim($('#cpass').val()).length == 0) {
+                            is_empty = 'Ensure you have filled both password fields';
+                            $('#error_tag').text(is_empty);
+                            $('#email').css('border', '1px solid #FCB9B2');
+                        }
+                        // else {
+                        //     if ($.trim($('#password').val()) = !$.trim($('#cpass').val())) {
+                        //         is_empty = 'Passwords do not match';
+                        //         $('#error_tag').text(is_empty);
+                        //         $('#email').css('border', '1px solid #FCB9B2');
+                        //     } 
+                        else {
+                            var data = {
+                                'email': $('#email').val(),
+                                'firstname': $('#firstname').val(),
+                                'lastname': $('#lastname').val(),
+                                'password': $('#password').val(),
+                                'gender': $('#gender').val()
+                            };
+                            $.ajax({
+                                url: "<?php echo base_url('Register/new_user') ?>",
+                                method: 'post',
+                                data: data,
+                                success: function(result) {
+                                    if (result == 1) {
+                                        console.log('A')
+                                    } else {
+                                        console.log('Balaa')
+                                    }
+
+                                }
+                            })
+                        }
+                    }
+                }
+                // }
+
+
+
+            })
+        })
+    </script>
 </body>
-</body>
+
 
 </html>
