@@ -1,0 +1,4 @@
+1. SESSIONS 
+2. Back button for registration
+3. Fix Add Category
+4. Landing page pets section and featured.
