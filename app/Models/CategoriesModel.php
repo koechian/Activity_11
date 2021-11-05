@@ -7,8 +7,20 @@ use CodeIgniter\Model;
 
 class CategoriesModel extends Model
 {
+    public function newCategory($category_name)
+    {
+        $db = db_connect();
 
-    protected $table = 'tbl_categories';
-    protected $primaryKey = 'category_id';
-    protected $allowedFields = ['category_name'];
+        $res = $db->query("INSERT INTO tbl_categories (category_name)VALUES('$category_name')");
+
+        return $res;
+    }
+    public function getCategories()
+    {
+        $db = db_connect();
+
+        $res = $db->query("SELECT * FROM tbl_categories");
+
+        return $res->getResultArray();
+    }
 }

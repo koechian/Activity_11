@@ -87,6 +87,7 @@ a {
 }
 a:hover {
   color: #ff3502;
+  cursor: pointer;
 }
 #options {
   position: absolute;

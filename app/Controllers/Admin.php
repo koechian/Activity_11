@@ -17,10 +17,26 @@ class Admin extends BaseController
     public function addCategories()
     {
         $categories = new CategoriesModel();
-        $data = [
-            'category_name' => $this->request->getPost('category_name')
-        ];
-        $categories->save($data);
-        $data = ['status' => 'Category Added'];
+        $categoryname = $this->request->getPost('category_name');
+        $result = $categories->newCategory($categoryname);
+
+        try {
+            if ($result) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+    }
+    public function getCategories()
+    {
+        $db = db_connect();
+
+        $categories = new CategoriesModel();
+        $result['categories'] = $categories->getCategories();
+
+        return $this->response->setJSON($result);
     }
 }

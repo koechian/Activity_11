@@ -187,15 +187,22 @@
                     <h3>Categories</h3>
                   </div>
                   <div class="card-body">
-                    ......
+                    <table class="table table-hover tanle-striped table-bordered" id="category_table">
+                      <thead>
+                        <tr>
+                          <th>Category ID</th>
+                          <th>Category Name</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="category_data"></tbody>
+                    </table>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card-header">Add a new Category</div>
                 <div class="card-body">
-
-                  <?= csrf_field(); ?>
                   <div class="form-group">
                     <label for="">Category Name</label>
                     <input class="form-control" id="category_name" name="category_name" placeholder="Enter new Category" type="text">
@@ -241,39 +248,58 @@
   <script src="/Javascript/app.js"></script>
   <script>
     $(document).ready(function() {
-      $(document).on('click', '#new-category', function() {
-        if ($.trim($('#category_name').val()).length == 0) {
-          error_name = 'Please Enter a Category Name';
-          $('#error_name').text(error_name);
+      loadCategories();
 
-        } else {
-          error_name = '';
-
-        }
-        if (error_name != '') {
-          return false;
-
+      $("#new-category").click(function() {
+        var category_name = $("#category_name").val();
+        if (category_name == "") {
+          $("#error_name").html("Please enter a Category Name");
         } else {
           var data = {
-            'category_name': $('#category_name').val()
-          };
+            'category_name': category_name
+          }
           $.ajax({
-            method: 'POST',
-            url: '/Admin/addCategories',
-            data: data,
+            url: "<?php echo base_url('Admin/addCategories') ?>",
+            method: "POST",
+            data: {
+              category_name: category_name
+            },
             success: function(response) {
-              $('#add-category').find('input').val('')
-              swal("Category Added", "", "success")
+              if (response == 1) {
+                $("#error_name").html("");
+                $("#category_name").val("");
 
+                $('.category_data').html("");
+                loadCategories();
+              } else {
+                $("#error_name").html("Category already exists");
+              }
             }
+
           });
         }
-
       });
 
+      function loadCategories() {
+        $.ajax({
+          url: "<?php echo base_url('Admin/getCategories') ?>",
+          method: "GET",
+          success: function(response) {
+            $.each(response.categories, function(key, value) {
+              $('#category_table').append(
+                "<tr>" +
+                "<td>" + value.category_id + "</td>" +
+                "<td>" + value.category_name + "</td>" +
+                "<td><button class='btn btn-danger btn-sm delete-category' data-id='" + value.category_id + "'>Delete</button></td>" +
+                "</tr>"
+              );
 
+            });
+          }
 
-    });
+        });
+      }
+    })
   </script>
 </body>
 
