@@ -23,4 +23,12 @@ class CategoriesModel extends Model
 
         return $res->getResultArray();
     }
+    public function deleteCategory($id)
+    {
+        $db = db_connect();
+
+        $res = $db->query("DELETE FROM tbl_categories WHERE category_id = $id");
+
+        return $res;
+    }
 }

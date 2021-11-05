@@ -271,6 +271,11 @@
 
                 $('.category_data').html("");
                 loadCategories();
+                Swal.fire(
+                  'Category Added',
+                  'Category has been added to the atabase successfully.',
+                  'success'
+                )
               } else {
                 $("#error_name").html("Category already exists");
               }
@@ -290,7 +295,7 @@
                 "<tr>" +
                 "<td>" + value.category_id + "</td>" +
                 "<td>" + value.category_name + "</td>" +
-                "<td><button class='btn btn-danger btn-sm delete-category' data-id='" + value.category_id + "'>Delete</button></td>" +
+                "<td><button id='delete_btn' class='btn btn-danger btn-sm delete-category' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='view_subcategories' class='btn btn-primary btn-sm' data-id='" + value.category_id + "'>View Subcategories</button> &nbsp &nbsp<button id='edit' class='btn btn-success btn-sm' data-id='" + value.category_id + "'>Edit</button></td>" +
                 "</tr>"
               );
 
@@ -299,6 +304,41 @@
 
         });
       }
+      $(document).on('click', '#delete_btn', function() {
+        var category_id = $(this).data('id');
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            $.ajax({
+              method: "POST",
+              url: "<?php echo base_url('Admin/deleteCategory') ?>",
+              data: {
+                category_id: category_id
+              },
+              success: function(response) {
+                if (response == 1) {
+                  Swal.fire(
+                    'Deleted!',
+                    'The entry has been deleted.',
+                    'success'
+                  )
+                  $('.category_data').html("");
+                  loadCategories();
+                }
+              }
+
+            })
+          }
+        })
+
+      })
     })
   </script>
 </body>

@@ -39,4 +39,20 @@ class Admin extends BaseController
 
         return $this->response->setJSON($result);
     }
+    public function deleteCategory()
+    {
+        $id = $this->request->getPost('category_id');
+        $categories = new CategoriesModel();
+        $result = $categories->deleteCategory($id);
+
+        try {
+            if ($result) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+    }
 }

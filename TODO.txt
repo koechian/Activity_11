@@ -1,3 +1,4 @@
 1. SESSIONS 
-
 4. Landing page pets section and featured.
+6. Subcategories
+7. Edit button
