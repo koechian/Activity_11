@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,7 +44,7 @@
   right: 59px;
   top: 57px;
 }
-hr {
+#top_bar hr {
   position: absolute;
   width: 50px;
   transform: rotate(90deg);
@@ -136,7 +139,7 @@ form input {
   position: absolute;
   left: 55px;
   top: 250px;
-  font-size: 52px;
+  font-size: 41px;
   color: white;
 }
 #men_label {
@@ -144,7 +147,7 @@ form input {
   position: absolute;
   right: 700px;
   top: 250px;
-  font-size: 72px;
+  font-size: 41px;
   color: black;
 }
 .brands {
@@ -200,4 +203,80 @@ form input {
 }
 .children div img {
   width: 640px;
+}
+.featured {
+  position: absolute;
+  top: 200vh;
+  height: 90vh;
+  width: 100vw;
+}
+
+.featured_heading {
+  position: absolute;
+  left: 37%;
+  margin-top: 70px;
+  text-align: center;
+}
+.featured div:nth-of-type(1) h1 {
+  font-family: "Red Hat Mono", monospace;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 30px;
+  letter-spacing: 7px;
+}
+.featured div:nth-of-type(1) hr {
+  border-top: solid #e4572e 10px;
+  width: 400px;
+}
+.cards_wrapper {
+  top: 152px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 748px;
+  width: 99vw;
+}
+.cards_wrapper div img {
+  max-height: 300px;
+  margin: 20px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+.cards_wrapper div h4 {
+  font-family: "Red Hat Mono", monospace;
+  color: #363636;
+}
+.cards_wrapper div p {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  margin: 12px;
+  color: #4b4b4b;
+}
+p span {
+  font-size: 12px;
+}
+.cards_wrapper div {
+  text-align: center;
+  margin: 50px;
+  height: 65%;
+  border-radius: 10px;
+  border: solid 0.5px #e7e7ee;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.cards_wrapper div button {
+  background: #eb9486;
+  color: #fff;
+  border: none;
+  width: 70px;
+  height: 27px;
+  cursor: pointer;
+  transition: ease 0.3s;
+  border-radius: 2px;
+}
+.cards_wrapper div button:hover {
+  cursor: pointer;
+  background-color: #f4c0b8;
 }

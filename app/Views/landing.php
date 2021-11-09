@@ -47,13 +47,13 @@
       <div class="female">
         <a href="">
           <img src="/Assets/female.png" alt="" srcset="" />
-          <span id="women_label">WOMEN</span>
+          <span id="women_label">FOR HER</span>
         </a>
       </div>
       <div class="male">
         <a href="">
           <img src="/Assets/male.png" alt="" srcset="" />
-          <span id="men_label">MEN</span>
+          <span id="men_label">FOR HIM</span>
         </a>
       </div>
     </div>
@@ -84,7 +84,30 @@
       </div>
     </div>
   </section>
-  <section class="pets"></section>
+  <section class="featured">
+    <div class="featured_heading">
+      <h1>Featured</h1>
+      <hr>
+    </div>
+    <div class="cards_wrapper">
+      <div><img src="/Assets/products/nike.jpg" alt="" srcset="">
+        <h4>FOR THE NIKEY FANS</h4>
+        <p>Authentic products from Nike&#8482; for everyone.</p>
+        <span>Starting from Ksh 3500.00 &nbsp;<button href="">Buy Now</button></span>
+      </div>
+      <div><img src="/Assets/products/men_collection.jpg" alt="" srcset="">
+        <h4>THE FRIDAY FIT</h4>
+        <p>A collection of mens' casual wear carefully curated by our in-house fashionistas</p>
+        <span>Ksh 5000.00* &nbsp;<button href="">Buy Now</button></span>
+      </div>
+      <div><img src="/Assets/products/shoe2.jpg" alt="" srcset="">
+        <h4>Adidas&#8482;
+          Funk Wav Bounces</h4>
+        <p>Our prime picks from Adidas' top shelf collection of runnning Shoes<span>(please dont run in these beauties)</span></p>
+        <span>Ksh 7000.00 &nbsp;<button>Buy Now</button></span>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
