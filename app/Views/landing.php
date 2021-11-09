@@ -71,15 +71,21 @@
   <section class="children">
     <div class="children_container">
       <div>
-        <span id="span1"><a href="">Ages 0-3</a></span>
+        <div class="ages">
+          <span><a href="">Ages 0-3</a></span>
+        </div>
         <img src="/Assets/0-3.png" />
       </div>
       <div>
-        <span><a href="">Ages 4-6</a></span>
+        <div class="ages">
+          <span><a href="">Ages 4-6</a></span>
+        </div>
         <img src="/Assets/4-6.png" alt="" />
       </div>
       <div>
-        <span><a href="">Ages 7-14</a></span>
+        <div class="ages">
+          <span><a href="">Ages 7-14</a></span>
+        </div>
         <img src="/Assets/7-14.png" alt="" />
       </div>
     </div>
