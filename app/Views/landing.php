@@ -93,21 +93,66 @@
       <div><img src="/Assets/products/nike.jpg" alt="" srcset="">
         <h4>FOR THE NIKEY FANS</h4>
         <p>Authentic products from Nike&#8482; for everyone.</p>
-        <span>Starting from Ksh 3500.00 &nbsp;<button href="">Buy Now</button></span>
+        <span class="price_tag">Starting from Ksh 3500.00 &nbsp;<button href="">Buy Now</button></span>
       </div>
       <div><img src="/Assets/products/men_collection.jpg" alt="" srcset="">
         <h4>THE FRIDAY FIT</h4>
         <p>A collection of mens' casual wear carefully curated by our in-house fashionistas</p>
-        <span>Ksh 5000.00* &nbsp;<button href="">Buy Now</button></span>
+        <span class="price_tag">Ksh 5000.00* &nbsp;<button href="">Buy Now</button></span>
       </div>
       <div><img src="/Assets/products/shoe2.jpg" alt="" srcset="">
         <h4>Adidas&#8482;
           Funk Wav Bounces</h4>
         <p>Our prime picks from Adidas' top shelf collection of runnning Shoes<span>(please dont run in these beauties)</span></p>
-        <span>Ksh 7000.00 &nbsp;<button>Buy Now</button></span>
+        <span class="price_tag">Ksh 7000.00 &nbsp;<button>Buy Now</button></span>
       </div>
     </div>
   </section>
+  <section class="footer">
+    <footer>
+      <div class="content">
+        <div class="content-block1">
+          <h4>Need Help?</h4>
+          <ul>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Payment Options</a></li>
+            <li><a href="">Returns and Exchanges</a></li>
+            <li><a href="">Unsubscribe</a></li>
+          </ul>
+        </div>
+        <div class="content-block2">
+          <h4>GUSHI</h4>
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Privacy and Cookies</a></li>
+
+            <li><a href="">Admin Login</a></li>
+          </ul>
+        </div>
+        <div class="content-block3">
+          <h4>Our Social Handles</h4>
+          <ul>
+            <li><a href=""><span id="twitter-icon" class="iconify" data-icon="ci:twitter"></span>Twitter</a></li>
+            <li><a href=""><span id="instagram-icon" class="iconify" data-icon="ci:instagram"></span>Instagram</a></li>
+            <li><a href=""><span id="youtube-icon" class="iconify" data-icon="ci:youtube"></span>You Tube</a></li>
+            <li><a href=""><span id="pinterest-icon" class="iconify" data-icon="cib:pinterest-p"></span>Pinterest</a></li>
+            <li><a href=""><span id="snapchat-icon" class="iconify" data-icon="ci:snapchat"></span>Snapchat</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="updates">
+        <h4>Sign Up for GUSHI Updates</h4>
+        <input placeholder="Email" type="email">
+        <button> <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="copyright">
+        <p>© 2021 - 2021 GUSHI I.a.N. - All rights reserved. </p>
+      </div>
+
+    </footer>
+  </section>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <script src="https://kit.fontawesome.com/22c0187942.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -251,8 +251,13 @@ form input {
   margin: 12px;
   color: #4b4b4b;
 }
-p span {
+div p span {
   font-size: 12px;
+}
+.price_tag {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
 }
 .cards_wrapper div {
   text-align: center;
@@ -279,4 +284,106 @@ p span {
 .cards_wrapper div button:hover {
   cursor: pointer;
   background-color: #f4c0b8;
+}
+.footer {
+  position: absolute;
+  top: 280vh;
+  height: 25vh;
+  background: #b6b9b8;
+  width: 100vw;
+}
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.footer h4 {
+  margin-bottom: 20px;
+  color: #363636;
+  font-family: "Red Hat Mono", monospace;
+}
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  color: aliceblue;
+  margin-left: 100px;
+}
+.copyright p {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  color: #4e4e4e;
+  font-size: 15px;
+}
+.updates {
+  position: absolute;
+  right: 180px;
+  margin-top: 30px;
+}
+.updates input:nth-of-type(1) {
+  border: none;
+  background-color: #727272;
+  height: 27px;
+  width: 200px;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.updates input:nth-of-type(1)::placeholder {
+  color: #3d3d3d;
+}
+.updates button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  top: 40px;
+  left: 169px;
+  color: #363636;
+}
+.updates button:hover {
+  cursor: pointer;
+}
+.content div {
+  margin: 30px 0 0 250px;
+}
+
+.content div ul {
+  padding: 0;
+}
+.content div ul li {
+  list-style: none;
+  margin-bottom: 7px;
+}
+.content div ul li a {
+  display: flex;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #727272;
+  line-height: 22px;
+  transition: all 0.4s;
+}
+.iconify {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: #525252;
+  transition: all 0.4s;
+}
+.content div ul li a:hover {
+  color: #1d1d1d;
+}
+
+#twitter-icon:hover {
+  color: #55acee;
+}
+#instagram-icon:hover {
+  color: #285aeb;
+}
+#youtube-icon:hover {
+  color: #ff0000;
+}
+#pinterest-icon:hover {
+  color: #e60023;
+}
+#snapchat-icon:hover {
+  color: #fefc00;
 }
