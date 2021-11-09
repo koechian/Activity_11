@@ -35,6 +35,7 @@
           <li><a href="">Men</a></li>
           <li><a href="">Women</a></li>
           <li><a href="">Pets</a></li>
+          <li><a href="<?= site_url('About') ?>">About Us</a></li>
         </ul>
       </div>
       <div class="cart">

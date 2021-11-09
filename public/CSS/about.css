@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,100&family=Playfair+Display:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(/Assets/background.jpg);
+  background-size: cover;
+}
+.text {
+  font-family: Philosopher;
+  font-size: 70px;
+  font-weight: 600;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+}
+.quotes {
+  width: 500px;
+  position: absolute;
+  top: 20%;
+  right: 200px;
+  font-family: "Josefin Sans";
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+  line-height: 40px;
+}
+hr {
+  width: 60%;
+  margin-top: 20px;
+}
+.quotes p {
+  transition: opacity 1s;
+}
+.text2 {
+  position: absolute;
+  bottom: 150px;
+  left: 22%;
+  width: 60%;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: rgb(206, 206, 206);
+}
