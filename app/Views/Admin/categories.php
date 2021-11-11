@@ -31,7 +31,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="../../index3.html" class="nav-link">Home</a>
+          <a href="<?= site_url('Admin') ?>" class="nav-link">Home</a>
         </li>
       </ul>
 
@@ -132,6 +132,14 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="<?= site_url('Admin/Users') ?>" class="nav-link">
+                    <i class="fa fa-list"></i>
+                    <p>
+                      Users List
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="pages/gallery.html" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
@@ -154,7 +162,7 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?= site_url('Admin') ?>">Home</a></li>
                 <li class="breadcrumb-item active">Categories</li>
               </ol>
             </div>

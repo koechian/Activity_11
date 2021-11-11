@@ -14,6 +14,17 @@ class Admin extends BaseController
     {
         return view('Admin/categories');
     }
+    public function Users()
+    {
+        return view('Admin/users');
+    }
+    public function getUsers()
+    {
+        $users = new UsersModel();
+        $result['users'] = $users->getUsers();
+
+        return $this->response->setJSON($result);
+    }
     public function addCategories()
     {
         $categories = new CategoriesModel();
@@ -32,8 +43,6 @@ class Admin extends BaseController
     }
     public function getCategories()
     {
-        $db = db_connect();
-
         $categories = new CategoriesModel();
         $result['categories'] = $categories->getCategories();
 

@@ -84,8 +84,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
             <li class="nav-item menu-open">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -95,7 +94,6 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
                 <li class="nav-header">Quick Links</li>
                 <li class="nav-item">
                   <a href="<?= site_url('Admin/Categories') ?>" class="nav-link">
@@ -109,7 +107,7 @@
                   <a href="pages/gallery.html" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
-                      Gallery
+                      Users List
                     </p>
                   </a>
                 </li>
@@ -367,7 +365,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a>Home</a></li>
+                <li class="breadcrumb-item"><a href="<?= site_url('Admin') ?>">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
               </ol>
             </div><!-- /.col -->
