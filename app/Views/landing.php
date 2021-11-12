@@ -31,28 +31,29 @@
       </div>
       <div class="links">
         <ul>
-          <li><a href="">Children</a></li>
-          <li><a href="">Men</a></li>
-          <li><a href="">Women</a></li>
-          <li><a href="">Pets</a></li>
           <li><a href="<?= site_url('About') ?>">About Us</a></li>
+          <li><a href="<?= site_url('Pages/Children') ?>">Children</a></li>
+          <li><a href="<?= site_url('Pages/Men') ?>">Men</a></li>
+          <li><a href="<?= site_url('Pages/Women') ?>">Women</a></li>
+          <li><a href="">Pets</a></li>
+
         </ul>
       </div>
       <div class="cart">
-        <span><a href="">Sign In/Register</a></span>
+        <span><a href="<?= site_url('Login') ?>">Sign In/Register</a></span>
         <hr />
-        <a class="icon" href=""><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
+        <a class="icon" href="<?= site_url('Landing/Cart') ?>"><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
       </div>
     </header>
     <div class="container">
       <div class="female">
-        <a href="">
+        <a href="<?= site_url('Pages/Women') ?>">
           <img src="/Assets/female.png" alt="" srcset="" />
           <span id="women_label">FOR HER</span>
         </a>
       </div>
       <div class="male">
-        <a href="">
+        <a href="<?= site_url('Pages/Men') ?>">
           <img src="/Assets/male.png" alt="" srcset="" />
           <span id="men_label">FOR HIM</span>
         </a>
@@ -73,19 +74,19 @@
     <div class="children_container">
       <div>
         <div class="ages">
-          <span><a href="">Ages 0-3</a></span>
+          <span><a href="<?= site_url('Pages/Children') ?>">Ages 0-3</a></span>
         </div>
         <img src="/Assets/0-3.png" />
       </div>
       <div>
         <div class="ages">
-          <span><a href="">Ages 4-6</a></span>
+          <span><a href="<?= site_url('Pages/Children') ?>">Ages 4-6</a></span>
         </div>
         <img src="/Assets/4-6.png" alt="" />
       </div>
       <div>
         <div class="ages">
-          <span><a href="">Ages 7-14</a></span>
+          <span><a href="<?= site_url('Pages/Children') ?>">Ages 7-14</a></span>
         </div>
         <img src="/Assets/7-14.png" alt="" />
       </div>
@@ -130,7 +131,7 @@
         <div class="content-block2">
           <h4>GUSHI</h4>
           <ul>
-            <li><a href="">About Us</a></li>
+            <li><a href="<?= site_url('About') ?>">About Us</a></li>
             <li><a href="">Privacy and Cookies</a></li>
 
             <li><a href="">Admin Login</a></li>
@@ -139,11 +140,11 @@
         <div class="content-block3">
           <h4>Our Social Handles</h4>
           <ul>
-            <li><a href=""><span id="twitter-icon" class="iconify" data-icon="ci:twitter"></span>Twitter</a></li>
+            <li><a title="Follow Ian" href="https://twitter.com/mwafrikaa_"><span id="twitter-icon" class="iconify" data-icon="ci:twitter"></span>Twitter</a></li>
             <li><a href=""><span id="instagram-icon" class="iconify" data-icon="ci:instagram"></span>Instagram</a></li>
-            <li><a href=""><span id="youtube-icon" class="iconify" data-icon="ci:youtube"></span>You Tube</a></li>
-            <li><a href=""><span id="pinterest-icon" class="iconify" data-icon="cib:pinterest-p"></span>Pinterest</a></li>
-            <li><a href=""><span id="snapchat-icon" class="iconify" data-icon="ci:snapchat"></span>Snapchat</a></li>
+            <li><a href="www.youtube.com"><span id="youtube-icon" class="iconify" data-icon="ci:youtube"></span>You Tube</a></li>
+            <li><a href="https://www.pinterest.com/search/pins/?q=fashion&rs=typed&term_meta[]=fashion%7Ctyped"><span id="pinterest-icon" class="iconify" data-icon="cib:pinterest-p"></span>Pinterest</a></li>
+            <li><a href="https://www.snapchat.com/add/kava917?share_id=MDQ5QTgy&locale=en_KE"><span id="snapchat-icon" class="iconify" data-icon="ci:snapchat"></span>Snapchat</a></li>
           </ul>
         </div>
       </div>
