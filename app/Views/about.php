@@ -10,7 +10,13 @@
 </head>
 
 <body>
-  <div class="text">GUSHI</div>
+  <div class="text"><a href="<?= site_url('Pages/index') ?>">
+      <svg xmlns="http://www.w3.org/2000/svg" width="178" height="65" viewBox="0 0 178 65">
+        <text id="GUSHI" transform="translate(0 52)" font-size="58" font-family="Philosopher-Bold, Philosopher" font-weight="700" letter-spacing="0.01em">
+          <tspan x="0" y="0">GUSHI</tspan>
+        </text>
+      </svg>
+    </a></div>
   <div class="quotes">
     <p id="quotes_display">
       “Fashion is a form of ugliness so intolerable that we have to alter it

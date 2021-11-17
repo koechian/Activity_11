@@ -31,7 +31,7 @@
       </div>
       <div class="links">
         <ul>
-          <li><a href="<?= site_url('About') ?>">About Us</a></li>
+          <li><a href="<?= site_url('Pages/About') ?>">About Us</a></li>
           <li><a href="<?= site_url('Pages/Children') ?>">Children</a></li>
           <li><a href="<?= site_url('Pages/Men') ?>">Men</a></li>
           <li><a href="<?= site_url('Pages/Women') ?>">Women</a></li>
@@ -42,7 +42,7 @@
       <div class="cart">
         <span><a href="<?= site_url('Login') ?>">Sign In/Register</a></span>
         <hr />
-        <a class="icon" href="<?= site_url('Landing/Cart') ?>"><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
+        <a class="icon" href="<?= site_url('Pages/Cart') ?>"><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
       </div>
     </header>
     <div class="container">
@@ -131,7 +131,7 @@
         <div class="content-block2">
           <h4>GUSHI</h4>
           <ul>
-            <li><a href="<?= site_url('About') ?>">About Us</a></li>
+            <li><a href="<?= site_url('Pages/About') ?>">About Us</a></li>
             <li><a href="">Privacy and Cookies</a></li>
 
             <li><a href="">Admin Login</a></li>

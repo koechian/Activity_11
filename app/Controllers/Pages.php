@@ -8,6 +8,10 @@ use App\Controllers\BaseController;
 
 class Pages extends BaseController
 {
+    public function index()
+    {
+        return view('landing');
+    }
     public function Children()
     {
         return view('children');
@@ -19,5 +23,17 @@ class Pages extends BaseController
     public function Women()
     {
         return view('women');
+    }
+    public function Profile()
+    {
+        return view('profile');
+    }
+    public function About()
+    {
+        return view('about');
+    }
+    public function Cart()
+    {
+        return view('cart');
     }
 }

@@ -1,19 +1,15 @@
 .reciept-wrapper {
-  margin-left: 300px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-top: 50px;
-  max-width: 800px;
-  min-width: 500px;
-  min-height: 700px;
-  outline: red dotted 2px;
+  min-height: 600px;
+  display: flex;
+  background-color: rgb(245, 245, 245);
 }
 
-.reciept {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-.reciept h4 {
+#selections {
   margin-top: 10px;
+  margin-left: 10px;
   margin-bottom: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -25,14 +21,116 @@
   text-decoration: none;
   color: rgb(83, 83, 83);
   margin-left: 600px;
-  margin-top: 10px;
 }
 .print {
+  margin-top: 20px;
   height: 30px;
   width: 30px;
 }
-.reciept-wrapper hr {
-  width: 40%;
+
+.reciept-aside {
+  margin-left: 150px;
+  width: 500px;
+  height: 600px;
+  right: 150px;
+  background-color: #fff;
+}
+.reciept-aside * {
+  margin-left: 10px;
+}
+.reciept-aside h4 {
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  color: rgb(80, 80, 80);
+}
+.reciept-aside h6 {
   margin-top: 10px;
-  position: absolute;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: rgb(105, 105, 105);
+}
+.reciept-aside button {
+  border-radius: 3px;
+  background: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  margin-left: 100px;
+  margin-top: 20px;
+  border: none;
+  transition: ease 0.3s;
+}
+.reciept-aside button:hover {
+  background: rgb(31, 31, 31);
+  color: white;
+}
+.reciept-aside span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: rgb(99, 99, 99);
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-right: 20px;
+}
+.reciept-aside span h5 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: rgb(76, 110, 71);
+}
+.reciept-header {
+  margin-left: 30px;
+}
+.reciept-body {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.item {
+  display: flex;
+}
+.item div:nth-of-type(1) {
+  height: 350px;
+  width: 350px;
+}
+.item div:nth-of-type(1) img {
+  height: 100%;
+  width: 100%;
+  background-position: cover;
+}
+.reciept-body .item hr {
+  position: inherit;
+}
+.item div span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  color: rgb(92, 92, 92);
+}
+.item div span:nth-of-type(1) {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: rgb(82, 82, 82);
+}
+.item div button {
+  border: none;
+  background-color: transparent;
+  color: rgb(54, 54, 54);
+  transition: ease 0.4s;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.item div button:hover {
+  color: rgba(156, 99, 46, 0.829);
 }
