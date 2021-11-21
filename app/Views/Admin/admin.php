@@ -2,821 +2,134 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GUSHI | Admin</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | GUSHI</title>
   <link rel="stylesheet" href="/CSS/admin.css">
+
 </head>
 
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-  <div class="wrapper">
+<body>
+  <div class="nav-left">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="100" height="38" viewBox="0 0 100 38">
+      <text id="GUSHI" transform="translate(0 31)" fill="#d4d0d0" font-size="34" font-family="Philosopher-Regular, Philosopher">
+        <tspan x="0" y="0">GUSHI</tspan>
+      </text>
+    </svg>
 
-    <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="107" height="166" viewBox="0 0 107 166">
-        <text id="G" transform="translate(0 133)" fill="#D0D9DD" font-size="148" font-family="Philosopher-Regular, Philosopher">
-          <tspan x="0" y="0">G</tspan>
-        </text>
-      </svg>
-
-    </div>
-
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="<?= site_url('Landing') ?>" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
-        </li>
-      </ul>
-
-    </nav>
-    <!-- /.navbar -->
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 167 64">
-          <text id="GUSHI" transform="translate(0 51)" fill="#D0D9DD" font-size="57" font-family="Philosopher-Regular, Philosopher">
-            <tspan x="0" y="0">GUSHI</tspan>
-          </text>
+    <div class="items">
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <path id="bx-user" d="M19,2a8.664,8.664,0,0,0-8.889,8.421A8.664,8.664,0,0,0,19,18.842a8.664,8.664,0,0,0,8.889-8.421A8.664,8.664,0,0,0,19,2Zm0,13.474a5.2,5.2,0,0,1-5.333-5.053A5.2,5.2,0,0,1,19,5.368a5.2,5.2,0,0,1,5.333,5.053A5.2,5.2,0,0,1,19,15.474ZM35,34V32.316c0-6.511-5.572-11.789-12.444-11.789H15.444C8.572,20.526,3,25.8,3,32.316V34H6.556V32.316a8.664,8.664,0,0,1,8.889-8.421h7.111a8.664,8.664,0,0,1,8.889,8.421V34Z" transform="translate(-3 -2)" fill="#fff" />
         </svg>
-      </div>
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
-          </div>
-        </div>
+      </a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <path id="bx-store" d="M29.437,3.635A3.183,3.183,0,0,0,26.694,2H9.306A3.184,3.184,0,0,0,6.563,3.635l-4.334,7.6A1.743,1.743,0,0,0,2,12.105a6.891,6.891,0,0,0,1.6,4.409V30.632A3.291,3.291,0,0,0,6.8,34H29.2a3.291,3.291,0,0,0,3.2-3.368V16.515A6.891,6.891,0,0,0,34,12.105a1.743,1.743,0,0,0-.229-.867Zm1.338,8.893a3.194,3.194,0,0,1-6.374-.423,1.558,1.558,0,0,0-.062-.323l.032-.007L23.152,5.368h3.542l4.08,7.16ZM16.11,5.368h3.778l1.3,6.846A3.28,3.28,0,0,1,18,15.474a3.28,3.28,0,0,1-3.189-3.259Zm-6.8,0h3.542l-1.216,6.407.032.007a1.462,1.462,0,0,0-.064.323,3.291,3.291,0,0,1-3.2,3.368,3.266,3.266,0,0,1-3.174-2.946ZM14.8,30.632V25.579h6.4v5.053Zm9.6,0V25.579a3.291,3.291,0,0,0-3.2-3.368H14.8a3.291,3.291,0,0,0-3.2,3.368v5.053H6.8V18.6a6.058,6.058,0,0,0,1.6.239,6.251,6.251,0,0,0,4.8-2.285,6.183,6.183,0,0,0,9.6,0,6.251,6.251,0,0,0,4.8,2.285,6.058,6.058,0,0,0,1.6-.239V30.632Z" transform="translate(-2 -2)" fill="#fff" />
+        </svg>
+      </a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <path id="Path_1" data-name="Path 1" d="M18,2A16,16,0,1,0,34,18,16.018,16.018,0,0,0,18,2Zm0,28.8A12.8,12.8,0,1,1,30.8,18,12.815,12.815,0,0,1,18,30.8Z" transform="translate(-2 -2)" fill="#fff" />
+          <path id="Path_2" data-name="Path 2" d="M12,5.166v11.09H23.067A11.051,11.051,0,0,0,12,5.166Z" transform="translate(4 -0.256)" fill="#fff" />
+        </svg>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-          <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-            <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-header">Quick Links</li>
-                <li class="nav-item">
-                  <a href="<?= site_url('Admin/Categories') ?>" class="nav-link">
-                    <i class="fa fa-th-large"></i>
-                    <p>
-                      Item Categories
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
-                    <i class="nav-icon far fa-image"></i>
-                    <p>
-                      Users List
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/kanban.html" class="nav-link">
-                    <i class="nav-icon fas fa-columns"></i>
-                    <p>
-                      Kanban Board
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon far fa-envelope"></i>
-                    <p>
-                      Mailbox
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="pages/mailbox/mailbox.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Inbox</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/mailbox/compose.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Compose</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/mailbox/read-mail.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Read</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
-                    <p>
-                      Pages
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="pages/examples/invoice.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Invoice</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/profile.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Profile</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/e-commerce.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>E-commerce</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/projects.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Projects</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/project-add.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Project Add</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/project-edit.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Project Edit</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/project-detail.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Project Detail</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/contacts.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Contacts</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/faq.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>FAQ</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/contact-us.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Contact us</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon far fa-plus-square"></i>
-                    <p>
-                      Extras
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                          Login & Register v1
-                          <i class="fas fa-angle-left right"></i>
-                        </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                          <a href="pages/examples/login.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Login v1</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/register.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Register v1</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/forgot-password.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Forgot Password v1</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/recover-password.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Recover Password v1</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                          Login & Register v2
-                          <i class="fas fa-angle-left right"></i>
-                        </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                          <a href="pages/examples/login-v2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Login v2</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/register-v2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Register v2</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/forgot-password-v2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Forgot Password v2</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/examples/recover-password-v2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Recover Password v2</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/lockscreen.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Lockscreen</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/legacy-user-menu.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Legacy User Menu</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/language-menu.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Language Menu</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/404.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Error 404</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/500.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Error 500</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/pace.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Pace</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="pages/examples/blank.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Blank Page</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="starter.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Starter Page</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">Dashboard</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="<?= site_url('Admin') ?>">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-8">
-                    <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                    </p>
-
-                    <div class="chart">
-                      <!-- Sales Chart Canvas -->
-                      <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                    </div>
-                    <!-- /.chart-responsive -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <p class="text-center">
-                      <strong>Goal Completion</strong>
-                    </p>
-
-                    <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
-                    </div>
-
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      Send Inquiries
-                      <span class="float-right"><b>250</b>/500</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- ./card-body -->
-              <div class="card-footer">
-                <div class="row">
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                      <h5 class="description-header">$35,210.43</h5>
-                      <span class="description-text">TOTAL REVENUE</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                      <h5 class="description-header">$10,390.90</h5>
-                      <span class="description-text">TOTAL COST</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                      <h5 class="description-header">$24,813.53</h5>
-                      <span class="description-text">TOTAL PROFIT</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block">
-                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                      <h5 class="description-header">1200</h5>
-                      <span class="description-text">GOAL COMPLETIONS</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <div class="col-md-8">
-            <!-- MAP & BOX PANE -->
-
-            <!-- /.card -->
-            <div class="row  card-margin">
-              <div class="col-md-9">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Recently Added Products</h3>
-
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body p-0  card-height">
-                    <ul class="products-list product-list-in-card pl-2 pr-2">
-                      <li class="item">
-                        <div class="product-img">
-                          <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:void(0)" class="product-title">Samsung TV
-                            <span class="badge badge-warning float-right">$1800</span></a>
-                          <span class="product-description">
-                            Samsung 32" 1080p 60Hz LED Smart HDTV.
-                          </span>
-                        </div>
-                      </li>
-                      <!-- /.item -->
-                      <li class="item">
-                        <div class="product-img">
-                          <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:void(0)" class="product-title">Bicycle
-                            <span class="badge badge-info float-right">$700</span></a>
-                          <span class="product-description">
-                            26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                          </span>
-                        </div>
-                      </li>
-                      <!-- /.item -->
-                      <li class="item">
-                        <div class="product-img">
-                          <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:void(0)" class="product-title">
-                            Xbox One <span class="badge badge-danger float-right">
-                              $350
-                            </span>
-                          </a>
-                          <span class="product-description">
-                            Xbox One Console Bundle with Halo Master Chief Collection.
-                          </span>
-                        </div>
-                      </li>
-                      <!-- /.item -->
-                      <li class="item">
-                        <div class="product-img">
-                          <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:void(0)" class="product-title">PlayStation 4
-                            <span class="badge badge-success float-right">$399</span></a>
-                          <span class="product-description">
-                            PlayStation 4 500GB Console (PS4)
-                          </span>
-                        </div>
-                      </li>
-                      <!-- /.item -->
-                    </ul>
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <a href="javascript:void(0)" class="uppercase">View All Products</a>
-                  </div>
-                  <!-- /.card-footer -->
-                </div>
-
-
-              </div>
-              <!-- /.col -->
-
-              <div class="col-md-8">
-                <!-- USERS LIST -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Latest Users</h3>
-
-                    <div class="card-tools">
-                      <span class="badge badge-danger">8 New Users</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body p-0">
-                    <ul class="users-list clearfix">
-                      <li>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                        <span class="users-list-date">Today</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Norman</a>
-                        <span class="users-list-date">Yesterday</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Jane</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">John</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander</a>
-                        <span class="users-list-date">13 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Sarah</a>
-                        <span class="users-list-date">14 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nora</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nadia</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                    </ul>
-                    <!-- /.users-list -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <a href="javascript:">View All Users</a>
-                  </div>
-                  <!-- /.card-footer -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-            <!-- TABLE: LATEST ORDERS -->
-            <div class="card card-width card-margin">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Orders</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                      <tr>
-                        <th>Order ID</th>
-                        <th>Item</th>
-                        <th>Status</th>
-                        <th>Popularity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="badge badge-success">Shipped</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="badge badge-danger">Delivered</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-info">Processing</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="badge badge-danger">Delivered</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="badge badge-success">Shipped</span></td>
-                        <td>
-                          <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
+      </a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32.17" height="32" viewBox="0 0 32.17 32">
+          <path id="Path_3" data-name="Path 3" d="M28.444,0H3.556A3.559,3.559,0,0,0,0,3.556v7.111H3.556V3.556H28.444V28.444H3.556V21.333H0v7.111A3.559,3.559,0,0,0,3.556,32H28.444A3.559,3.559,0,0,0,32,28.444V3.556A3.56,3.56,0,0,0,28.444,0Z" transform="translate(32 32) rotate(180)" fill="#fff" />
+          <g id="bx-exit" transform="translate(49.17 142) rotate(180)">
+            <path id="Path_4" data-name="Path 4" d="M8,8l5-4L8,0V3H0V5H8Z" transform="translate(17 123)" fill="#fff" />
+          </g>
+        </svg>
+      </a>
     </div>
-    <!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+  <div class="main-container">
+    <div class="greeting">
+      <h1>Hello Ian</h1>
+      <p>
+        <script>
+          document.write(new Date().toDateString());
+        </script>
+      </p>
+    </div>
+    <div class="revenue-tabs-wrapper">
+      <div class="info-tabs">
+        <div class="tab">
+          <span>Sales Trends</span>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="linear-gradient1" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-opacity="0.188" />
+                <stop offset="1" stop-color="#9e9e9e" stop-opacity="0.769" />
+              </linearGradient>
+            </defs>
+            <path id="Path_6" data-name="Path 6" d="M60.523,58.015a6,6,0,0,0,9.408,0L103.2,19.255,93.792,8.293,65.227,41.573,49.97,23.8a6,6,0,0,0-9.408,0L7.293,62.558,16.7,73.52,45.266,40.24Z" transform="translate(14.353 17.129)" fill="url(#linear-gradient1)" />
+            <path id="Path_5" data-name="Path 5" d="M3,3V116.333A6.667,6.667,0,0,0,9.667,123H123V109.667H16.333V3Z" transform="translate(-3 -3)" fill="url(#linear-gradient1)" />
+          </svg>
+          <span>20%</span>
+        </div>
+        <div class="tab">
+          <span>New Users</span>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="120" viewBox="0 0 140 120">
+            <defs>
+              <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#ff0909" stop-opacity="0.412" />
+                <stop offset="1" stop-color="red" stop-opacity="0.161" />
+              </linearGradient>
+            </defs>
+            <path id="bx-user-plus" d="M121,36.005H107V60H86V76h21v24h14V76h21V60H121Zm-105,0A33.762,33.762,0,0,0,24.009,58.85,25.685,25.685,0,0,0,44,68,25.685,25.685,0,0,0,63.991,58.85,33.762,33.762,0,0,0,72,36.005,33.762,33.762,0,0,0,63.991,13.16,25.685,25.685,0,0,0,44,4.007,25.685,25.685,0,0,0,24.009,13.16,33.762,33.762,0,0,0,16,36.005Zm42,0a16.533,16.533,0,0,1-3.9,11.542A12.509,12.509,0,0,1,44,52a12.509,12.509,0,0,1-10.1-4.457A16.533,16.533,0,0,1,30,36.005a16.533,16.533,0,0,1,3.9-11.542A12.509,12.509,0,0,1,44,20.006a12.509,12.509,0,0,1,10.1,4.457A16.533,16.533,0,0,1,58,36.005ZM16,116c0-13.254,9.4-24,21-24H51c11.6,0,21,10.744,21,24v8H86v-8c0-22.09-15.67-40-35-40H37C17.67,76,2,93.91,2,116v8H16Z" transform="translate(-2 -3.999)" fill="url(#linear-gradient)" />
+          </svg>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- ./wrapper -->
+          <span>10 new users</span>
 
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
+        </div>
+        <div class="tab">
+          <span>Stock Levels</span>
+          <svg id="bx-basket" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="linear-gradient3" x1="1" x2="0.254" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#2B18DB" stop-opacity="0.69" />
+                <stop offset="1" stop-color="##2822C4" stop-opacity="0.22" />
+              </linearGradient>
+            </defs>
+            <path id="Path_7" data-name="Path 7" d="M115.991,42.488h-8.519L85.2,2.5,74.786,8.61,93.655,42.488H30.335L49.21,8.61,38.789,2.5,16.518,42.488H8a5.954,5.954,0,0,0-4.765,2.421A6.288,6.288,0,0,0,2.21,50.261L19,113.438A12.082,12.082,0,0,0,30.581,122.5H93.415a12.088,12.088,0,0,0,11.579-9.079l16.793-63.17a6.27,6.27,0,0,0-1.02-5.359,5.936,5.936,0,0,0-4.776-2.409ZM93.409,110.194v0H30.581L15.859,54.8h92.273Z" transform="translate(-2 -2.504)" fill="url(#linear-gradient3)" />
+            <path id="Path_8" data-name="Path 8" d="M9,13h9.057V31.513H9Zm18.113,0H36.17V31.513H27.113Z" transform="translate(36.993 56.754)" fill="url(#linear-gradient3)" />
+          </svg>
 
-  <!-- PAGE PLUGINS -->
-  <!-- jQuery Mapael -->
-  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-  <script src="plugins/raphael/raphael.min.js"></script>
-  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
+          <span>Empty in 2 Months</span>
 
-  <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard2.js"></script>
+        </div>
+      </div>
+      <div class="revenue">
+        <div>
+          <h1>Revenue</h1>
+        </div>
+        <div class="chart-container">
+          <div class="labels labels-left">
+            <ul>
+              <li><span>500k</span></li>
+              <li><span>400k</span></li>
+              <li><span>300k</span></li>
+              <li><span>200k</span></li>
+              <li><span>100k</span></li>
+              <li><span>50k</span></li>
+            </ul>
+          </div>
+          <div class="labels labels-right">
+            <ul>
+              <li><span>December</span></li>
+              <li><span>November</span></li>
+              <li><span>October</span></li>
+              <li><span>September</span></li>
+              <li><span>August</span></li>
+              <li><span>July</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dog">
+  </div>
 </body>
 
 </html>
