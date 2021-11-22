@@ -64,8 +64,6 @@ echo $buffer;
         <h2>Add New Product</h2>
         <label for="">Product Name</label>
         <input id="product_name" name="product_name" type="text">
-        <label for="">Category Name</label>
-        <input id="category_name" name="category_name" type="text">
         <label for="">Image Path</label>
         <input id="image_path" name="image_path" type="text">
         <label for="">Quantity</label>
@@ -77,7 +75,11 @@ echo $buffer;
         <label for="">Product Description</label>
         <input id="product_description" name="product_description" type="text">
 
-        <button class="add-green" id="new-caproduct">Create Product</button>
+        <button class="add-green" id="new-product">Create Product</button>
+        <div id="error">
+            <span id="error_text"></span>
+        </div>
+
     </div>
 </div>
 
@@ -86,6 +88,7 @@ echo $buffer;
 <script>
     $(document).ready(function() {
         loadCategories();
+        loadProducts()
 
         $("#new-category").click(function() {
             var category_name = $("#category_name").val();
@@ -121,6 +124,55 @@ echo $buffer;
                 });
             }
         });
+        $("#new-product").click(function() {
+            var product_details = {
+                name: $("#product_name").val(),
+                image: $("#image_path").val(),
+                quantity: $("#quantity").val(),
+                price: $("#unit_price").val(),
+                subcategory: $("#sub_category_id").val(),
+                description: $("#product_description").val()
+            };
+            if (product_details.name == "" | product_details.image == "" | product_details.quantity == "" | product_details.price == "" | product_details.subcategory == "" | product_details.description == "") {
+                console.log(product_details);
+                $("#error").css('display', 'flex')
+                $("#error_text").html("Please ensure all fields are filled");
+
+            } else {
+                var data = {
+                    'product_name': product_details.name,
+                    'product_image': product_details.image,
+                    'available_quantity': product_details.quantity,
+                    'unit_price': product_details.price,
+                    'subcategory_id': product_details.subcategory,
+                    'product_description': product_details.description,
+                    'added_by': 3
+                }
+                $.ajax({
+                    url: "<?php echo base_url('Admin/addProduct') ?>",
+                    method: "POST",
+                    data: data,
+                    success: function(response) {
+                        if (response == 1) {
+                            loadCategories();
+                            loadProducts();
+                            swal(
+                                'Product Added',
+                                'Product has been added to the store catalog successfully.',
+                                'success'
+                            )
+                        } else {
+                            swal(
+                                'Error',
+                                'There has been an Error in Insertion',
+                                'error'
+                            )
+                        }
+                    }
+
+                });
+            }
+        });
 
         function loadCategories() {
             $.ajax({
@@ -132,7 +184,7 @@ echo $buffer;
                             "<tr>" +
                             "<td>" + value.category_id + "</td>" +
                             "<td>" + value.category_name + "</td>" +
-                            "<td><button id='delete_btn' class='delete' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit' class='edit'" + value.category_id + "'>Edit</button></td>" +
+                            "<td><button id='delete_category_btn' class='delete' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit' class='edit'" + value.category_id + "'>Edit</button></td>" +
                             "</tr>"
                         );
 
@@ -141,7 +193,74 @@ echo $buffer;
 
             });
         }
-        $(document).on('click', '#delete_btn', function() {
+
+        function loadProducts() {
+            $.ajax({
+                url: "<?php echo base_url('Admin/getProducts') ?>",
+                method: "GET",
+                success: function(response) {
+                    $.each(response.products, function(key, value) {
+                        $('#products_table').append(
+                            "<tr>" +
+                            "<td>" + value.product_id + "</td>" +
+                            "<td>" + value.product_name + "</td>" +
+                            "<td>" + value.available_quantity + "</td>" +
+                            "<td>" + value.unit_price + "</td>" +
+                            "<td>" + value.product_description + "</td>" +
+                            "<td><button id='delete_product_btn' class='delete' data-id='" + value.product_id + "'>Delete</button></td>" +
+                            "</tr>"
+                        );
+
+                    });
+                }
+
+            });
+        }
+        $(document).on('click', '#delete_product_btn', function() {
+            var product_id = $(this).data('id');
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((value) => {
+                if (value) {
+                    $.ajax({
+                        method: "POST",
+                        url: "<?php echo base_url('Admin/deleteProduct') ?>",
+                        data: {
+                            product_id: product_id
+                        },
+                        success: function(response) {
+                            if (response == 1) {
+                                swal(
+                                    'Deleted!',
+                                    'The entry has been deleted.',
+                                    'success'
+                                )
+                                $('.products_data').html("");
+                                loadProducts();
+                            } else {
+
+                                swal(
+                                    'Error',
+                                    'Deletion Failed',
+                                    'error'
+                                )
+                                loadProducts();
+                            }
+                        }
+
+                    })
+
+                }
+
+            })
+        })
+        $(document).on('click', '#delete_category_btn', function() {
             var category_id = $(this).data('id');
             swal({
                 title: 'Are you sure?',
@@ -176,6 +295,50 @@ echo $buffer;
                                     'error'
                                 )
                                 loadCategories();
+                            }
+                        }
+
+                    })
+
+                }
+
+            })
+        })
+        $(document).on('click', '#delete_product_btn', function() {
+            var product_id = $(this).data('id');
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((value) => {
+                if (value) {
+                    $.ajax({
+                        method: "POST",
+                        url: "<?php echo base_url('Admin/deleteProduct') ?>",
+                        data: {
+                            product_id: product_id
+                        },
+                        success: function(response) {
+                            if (response == 1) {
+                                swal(
+                                    'Deleted!',
+                                    'The entry has been deleted.',
+                                    'success'
+                                )
+                                $('.products_data').html("");
+                                loadProducts();
+                            } else {
+
+                                swal(
+                                    'Error',
+                                    'Deletion Failed',
+                                    'error'
+                                )
+                                loadProducts();
                             }
                         }
 

@@ -6,7 +6,7 @@
   margin-left: 150px;
   margin-top: 20px;
   height: 30%;
-  width: 53%;
+  width: 60%;
 }
 h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,6 +28,7 @@ h2 {
 }
 .table td {
   text-align: center;
+  max-width: 150px;
 }
 .delete {
   border: none;
@@ -89,14 +90,27 @@ input {
   margin-left: 150px;
   margin-top: 20px;
   height: 30%;
-  width: 53%;
+  width: 60%;
 }
 .new-product {
   position: absolute;
   top: 21%;
   right: 5%;
-  height: 69%;
-  width: 30%;
+  height: 73%;
+  width: 20%;
   display: flex;
   flex-direction: column;
+}
+#error {
+  border: red solid 1.3px;
+  border-radius: 7px;
+  background-color: #fc464059;
+  width: 80%;
+  height: 100px;
+  justify-self: center;
+  margin-left: 34px;
+  margin-top: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
