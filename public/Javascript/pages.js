@@ -1,10 +1,11 @@
-var myButton=document.getElementById("back-to-top")
-function show(myButton){
-    myButton.style='display:block;';
+
+function show(){
+$('#back-to-top').css='display','block;';
+console.log('I have been scrolled');
 }
-
-
-document.onscroll(show());
+window.onscroll=function(ev){
+    show();
+}
 
 function start(){
     scrollTo(top);

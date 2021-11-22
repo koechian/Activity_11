@@ -6,7 +6,7 @@ include('nav.php');
 $buffer = ob_get_contents();
 ob_end_clean();
 
-$title = "Procucts " . "  " . "  " . " | " . " " . "  " . " GUSHI";
+$title = "Products " . "  " . "  " . " | " . " " . "  " . " GUSHI";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 
 echo $buffer;
@@ -134,11 +134,11 @@ echo $buffer;
                 description: $("#product_description").val()
             };
             if (product_details.name == "" | product_details.image == "" | product_details.quantity == "" | product_details.price == "" | product_details.subcategory == "" | product_details.description == "") {
-                console.log(product_details);
                 $("#error").css('display', 'flex')
                 $("#error_text").html("Please ensure all fields are filled");
 
             } else {
+                $(".new-product input").val("");
                 var data = {
                     'product_name': product_details.name,
                     'product_image': product_details.image,
@@ -154,13 +154,14 @@ echo $buffer;
                     data: data,
                     success: function(response) {
                         if (response == 1) {
-                            loadCategories();
+                            $('.products_data').html("");
                             loadProducts();
                             swal(
                                 'Product Added',
                                 'Product has been added to the store catalog successfully.',
                                 'success'
                             )
+
                         } else {
                             swal(
                                 'Error',

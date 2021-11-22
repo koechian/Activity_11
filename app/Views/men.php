@@ -9,7 +9,7 @@ $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $bu
 
 echo $buffer;
 ?>
-<section class="cards">
+<section class="main">
     <div class="heading">
         <h1>Men's Wear</h1>
 
@@ -49,30 +49,40 @@ echo $buffer;
         <hr class="filter-hr">
     </div>
     <div class="cards_wrapper">
-        <div><img src="/Assets/products/nike.jpg" alt="" srcset="">
-            <h4>FOR THE NIKEY FANS</h4>
-            <p>Authentic products from Nike&#8482; for everyone.</p>
-            <span class="price_tag">Starting from Ksh 3500.00 &nbsp;<button href="">Buy Now</button></span>
-        </div>
-        <div><img src="/Assets/products/men_collection.jpg" alt="" srcset="">
-            <h4>THE FRIDAY FIT</h4>
-            <p>A collection of mens' casual wear carefully curated by our in-house fashionistas</p>
-            <span class="price_tag">Ksh 5000.00* &nbsp;<button href="">Buy Now</button></span>
-        </div>
-        <div><img src="/Assets/products/shoe2.jpg" alt="" srcset="">
-            <h4>Adidas&#8482;
-                Funk Wav Bounces</h4>
-            <p>Our prime picks from Adidas' top shelf collection of runnning Shoes<span>(please dont run in these beauties)</span></p>
-            <span class="price_tag">Ksh 7000.00 &nbsp;<button>Buy Now</button></span>
-        </div>
+
     </div>
 </section>
 <button id="back-to-top" onclick="start('back-to-top')">Back</button>
 </body>
 <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 <script src="/Javascript/pages.js"></script>
-<script src="/Javascript/jquery-ui.min.js"></script>
+<script src="/Javascript/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        loadProducts()
 
+        function loadProducts() {
+            $.ajax({
+                url: "<?php echo base_url('Admin/getProducts') ?>",
+                method: "GET",
+                success: function(response) {
+                    $.each(response.products, function(key, value) {
+                        $('.cards_wrapper').append(
+                            "<div class='cards'><img src='" + value.product_image + "'>" +
+                            "<h4>" + value.product_name + "</h4>" +
+                            "<p>" + value.product_description + "</p>" +
+                            "<span class='price_tag'>Ksh." + value.unit_price + " &nbsp</span>" +
+                            "<button id='buy' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
+                            "</div>"
+                        );
+
+                    });
+                }
+
+            });
+        }
+    })
+</script>
 
 
 </html>

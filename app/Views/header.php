@@ -10,10 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Rampart+One&family=Ubuntu:wght@500&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/jquery-ui.min.css">
-    <link rel="stylesheet" href="/CSS/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="/CSS/jquery-ui.theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher" rel="stylesheet">
+    <script src="/Javascript/jquery.js"></script>
+
 
 </head>
 
