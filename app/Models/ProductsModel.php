@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 
-class CategoriesModel extends Model
+class ProductsModel extends Model
 {
     public function newCategory($category_name)
     {

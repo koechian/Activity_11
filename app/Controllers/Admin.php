@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\CategoriesModel;
+use App\Models\ProductsModel;
 
 class Admin extends BaseController
 {
@@ -10,9 +10,9 @@ class Admin extends BaseController
     {
         return view('Admin/admin');
     }
-    public function Categories()
+    public function Products()
     {
-        return view('Admin/categories');
+        return view('Admin/products');
     }
     public function Users()
     {
@@ -27,7 +27,7 @@ class Admin extends BaseController
     }
     public function addCategories()
     {
-        $categories = new CategoriesModel();
+        $categories = new ProductsModel();
         $categoryname = $this->request->getPost('category_name');
         $result = $categories->newCategory($categoryname);
 
@@ -43,7 +43,7 @@ class Admin extends BaseController
     }
     public function getCategories()
     {
-        $categories = new CategoriesModel();
+        $categories = new ProductsModel();
         $result['categories'] = $categories->getCategories();
 
         return $this->response->setJSON($result);
@@ -51,7 +51,7 @@ class Admin extends BaseController
     public function deleteCategory()
     {
         $id = $this->request->getPost('category_id');
-        $categories = new CategoriesModel();
+        $categories = new ProductsModel();
         $result = $categories->deleteCategory($id);
 
         try {

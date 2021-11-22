@@ -3,35 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.nav-left {
-  background-color: #474747;
-  width: 7%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.items {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.nav-left .logo {
-  margin-top: 30px;
-}
-.items a {
-  margin-top: 150px;
-}
-.items path {
-  transition: ease 0.4s;
-}
-.items a:hover path {
-  fill: #df9b6d;
-}
+
 .main-container {
   position: absolute;
   left: 7%;
