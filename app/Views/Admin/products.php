@@ -132,7 +132,7 @@ echo $buffer;
                             "<tr>" +
                             "<td>" + value.category_id + "</td>" +
                             "<td>" + value.category_name + "</td>" +
-                            "<td><button id='delete_btn' class='delete'" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit' class='edit'" + value.category_id + "'>Edit</button></td>" +
+                            "<td><button id='delete_btn' class='delete' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit' class='edit'" + value.category_id + "'>Edit</button></td>" +
                             "</tr>"
                         );
 
@@ -150,9 +150,9 @@ echo $buffer;
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.value) {
+                confirmButtonText: 'Yes, delete it!',
+            }).then((value) => {
+                if (value) {
                     $.ajax({
                         method: "POST",
                         url: "<?php echo base_url('Admin/deleteCategory') ?>",
@@ -169,6 +169,7 @@ echo $buffer;
                                 $('.category_data').html("");
                                 loadCategories();
                             } else {
+
                                 swal(
                                     'Error',
                                     'Deletion Failed',
@@ -179,9 +180,10 @@ echo $buffer;
                         }
 
                     })
-                }
-            })
 
+                }
+
+            })
         })
     })
 </script>
