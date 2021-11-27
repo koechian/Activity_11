@@ -120,9 +120,10 @@ form input {
 .male img,
 .children .children_container div img {
   background-position: cover;
-  max-height: 100%;
+  max-height: 95.5%;
   object-fit: contain;
   transition: ease 0.3s;
+  width: 100%;
 }
 .female img:hover,
 .male img:hover,
@@ -131,11 +132,11 @@ form input {
 }
 .ages {
   width: 300px;
-  height: 50px;
+  height: 49px;
   position: absolute;
   background: rgba(54, 54, 54, 0.541);
-  bottom: 16%;
-  margin-left: 142px;
+  bottom: 19%;
+  margin-left: 123px;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -152,10 +153,11 @@ form input {
 }
 .container {
   display: flex;
+  /* max-width: 100%; */
 }
 .male {
-  width: 960px;
-  height: 902px;
+  /* width: 872px; */
+  /* height: 902px; */
 }
 #women_label {
   font-family: "Ubuntu";
@@ -210,7 +212,7 @@ form input {
 }
 
 .children div img {
-  width: 640px;
+  width: 638px;
 }
 .featured {
   position: absolute;
