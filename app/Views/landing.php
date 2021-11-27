@@ -1,3 +1,12 @@
+<?php
+
+$session = session();
+
+if ($session->get('name') == "") {
+  header('location:login');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +49,13 @@
         </ul>
       </div>
       <div class="cart">
-        <span><a href="<?= site_url('Login') ?>">Sign In/Register</a></span>
+        <a title="Logout" href="<?= site_url('Login/logout') ?>"><?php
+                                                                  if ($session->get('name') == "") {
+                                                                    echo 'Sign In or Register';
+                                                                  } else {
+                                                                    echo $session->get('name');
+                                                                  }
+                                                                  ?></a>
         <hr />
         <a class="icon" href="<?= site_url('Pages/Cart') ?>"><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
       </div>
@@ -161,6 +176,7 @@
   </section>
   <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <script src="https://kit.fontawesome.com/22c0187942.js" crossorigin="anonymous"></script>
+  <script src="/Javascript/jquery.js"></script>
 </body>
 
 </html>

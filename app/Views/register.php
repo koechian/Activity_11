@@ -56,7 +56,7 @@
             <button id="create">Create Account</button>
         </div>
         <div>
-            <span id="span1">Already have an account? &nbsp; <a href="">Login</a></span>
+            <span id="span1">Already have an account? &nbsp; <a href="<?= site_url('Login') ?>">Login</a></span>
             <div id="options">
                 <a href="">Help</a>
                 <a href="">Privacy</a>

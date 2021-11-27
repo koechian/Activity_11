@@ -3,8 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
-
+use Throwable;
 
 class Pages extends BaseController
 {

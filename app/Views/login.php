@@ -65,7 +65,7 @@ use App\Controllers\Register;
                                 $('#email').css('border', '1px solid #A1EC83');
                                 $('#password').css('border', '1px solid #A1EC83');
                                 setTimeout(function() {
-                                    window.location.href = '<?php site_url("Landing") ?>';
+                                    window.location.replace('<?php echo base_url('Pages') ?>');
                                 }, 1000)
 
 

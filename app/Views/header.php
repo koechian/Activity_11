@@ -1,3 +1,11 @@
+<?php
+
+$session = session();
+
+if ($session->get('name') == "") {
+    header('location:login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +52,13 @@
                 </ul>
             </div>
             <div class="cart">
-                <span><a href="<?= site_url('Login') ?>">Sign In/Register</a></span>
+                <a title="Logout" href="<?= site_url('Login/logout') ?>"><?php
+                                                                            if ($session->get('name') == "") {
+                                                                                echo 'Sign In or Register';
+                                                                            } else {
+                                                                                echo $session->get('name');
+                                                                            }
+                                                                            ?></a>
                 <hr />
                 <a class="icon" href="<?= site_url('Pages/Cart') ?>"><span class="iconify shopping_icon" data-icon="ph:shopping-bag-light"></span></a>
             </div>

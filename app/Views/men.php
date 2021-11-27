@@ -42,6 +42,7 @@ echo $buffer;
                         <option value="3">Official Wear</option>
                         <option value="4">Accessories</option>
                     </select>
+                    <button class="clear">Clear</button>
             </div>
 
         </div>

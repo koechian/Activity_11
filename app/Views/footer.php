@@ -28,6 +28,26 @@
 
             });
         }
+
+        $('#logout').click(function() {
+            console.log('hey');
+            $.ajax({
+                url: "<?php echo base_url('Login/logout') ?>",
+                method: 'POST',
+                data: null,
+                success: function(result) {
+                    if (result == 1) {
+                        window.location.replace('Login.php');
+
+                    } else {
+                        console.log('Shite');
+                    }
+                }
+            })
+
+
+        })
+
     })
 </script>
 
