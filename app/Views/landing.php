@@ -34,9 +34,9 @@ if ($session->get('name') == "") {
         </svg>
       </div>
       <div>
-        <form name="homepage_search" action="" method="get">
-          <input class="searchbox" name="search_term" type="text" placeholder="Search" />
-        </form>
+        <input class="searchbox" id="search" type="text" placeholder="Search" />
+        <div id="search_results">
+        </div>
       </div>
       <div class="links">
         <ul>
@@ -177,6 +177,49 @@ if ($session->get('name') == "") {
   <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <script src="https://kit.fontawesome.com/22c0187942.js" crossorigin="anonymous"></script>
   <script src="/Javascript/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#search').keyup(function() {
+        console.log('Hello There')
+        $('#search_results').css('display', 'flex');
+        var data = {
+          data: $("#search").val()
+        }
+        $.ajax({
+          url: "<?php echo base_url('Pages/search') ?>",
+          method: 'GET',
+          data: data,
+          success: function(response) {
+            $('#search_results').html('');
+            $('#search_results').css('display', 'flex');
+            if (response.res == "") {
+              $('#search_results').append(
+                "<div class='results'> <a>" +
+                "<h4>Sorry, We seem to not have that product in stock.  😢</h4>"
+              );
+
+            } else {
+              $.each(response.res, function(key, value) {
+
+                $('#search_results').append(
+                  "<div class='results'> <a>" +
+                  "<h4>" + value.product_name + "</h4>" +
+                  "<p>" + value.product_description + "</p>" +
+                  "</a></div>"
+                );
+
+              });
+
+            }
+
+          }
+        })
+      });
+      $('#search').focusout(function() {
+        $('#search_results').css('display', 'none');
+      })
+    })
+  </script>
 </body>
 
 </html>

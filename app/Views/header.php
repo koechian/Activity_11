@@ -19,6 +19,7 @@ if ($session->get('name') == "") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/cart.css">
     <script src="/Javascript/jquery.js"></script>
 
 
@@ -37,9 +38,10 @@ if ($session->get('name') == "") {
                 </a>
             </div>
             <div>
-                <form name="homepage_search" action="" method="get">
-                    <input class="searchbox" name="search_term" type="text" placeholder="Search" />
-                </form>
+                <input autocomplete="off" class="searchbox" id="search" type="text" placeholder="Search" />
+                <div id="search_results">
+
+                </div>
             </div>
             <div class="links">
                 <ul>

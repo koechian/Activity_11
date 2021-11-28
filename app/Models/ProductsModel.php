@@ -55,4 +55,12 @@ class ProductsModel extends Model
 
         return $res;
     }
+    public function searchProducts($search_term)
+    {
+        $db = db_connect();
+
+        $res = $db->query("SELECT * FROM `tbl_product` WHERE product_name LIKE '%$search_term%' LIMIT 5");
+
+        return $res->getResultArray();
+    }
 }

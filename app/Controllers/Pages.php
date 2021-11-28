@@ -3,7 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use Throwable;
+use App\Models\ProductsModel;
+use mysqli;
 
 class Pages extends BaseController
 {
@@ -34,5 +35,12 @@ class Pages extends BaseController
     public function Cart()
     {
         return view('cart');
+    }
+    public function search()
+    {
+        $search_term = $_GET['data'];
+        $search_obj = new ProductsModel();
+        $values['res'] = $search_obj->searchProducts($search_term);
+        return $this->response->setJSON($values);
     }
 }

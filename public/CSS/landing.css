@@ -30,6 +30,7 @@
   border: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25px;
+  padding-left: 30px;
 }
 .searchbox::placeholder {
   text-align: center;
@@ -396,4 +397,45 @@ div p span {
 }
 #snapchat-icon:hover {
   color: #fefc00;
+}
+#search_results{
+  position: absolute;
+  min-height: 30%;
+  width: 36%;
+  left: 34%;
+  top: 10%;
+  z-index: 5;
+  background-color: rgba(153, 153, 153, 0.527);
+  margin-top: 13px;
+  border-radius: 15px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+.results{
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(223, 223, 223, 0.568);
+  width: 85%;
+  max-height: 147px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+.results h4{
+  font-size: 15px;
+}
+.resluts p{
+  font-size: 10px;
+}
+.results a{
+  text-decoration: none;
+  color: #121317;
+  transition:ease 0.4s ;
+}
+.results a:hover{
+  color: #ac0000;
+  cursor: pointer;
 }
