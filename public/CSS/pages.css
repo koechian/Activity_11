@@ -259,10 +259,9 @@ div p span {
   left: 34%;
   top: 10%;
   z-index: 5;
-  background-color: rgba(238, 238, 238, 0.527);
+  background-color: rgba(153, 153, 153, 0.527);
   margin-top: 13px;
   border-radius: 15px;
-  border: 3px solid rgba(223, 223, 223, 0.568);
   display: none;
   flex-direction: column;
   justify-content: center;
