@@ -51,6 +51,7 @@ echo $buffer;
                 <tr>
                     <th>Product Id</th>
                     <th>Product Name</th>
+                    <th>Target Gender</th>
                     <th>Stock</th>
                     <th>Unit Price</th>
                     <th>Sub-Category Id</th>
@@ -66,6 +67,8 @@ echo $buffer;
         <input id="product_name" name="product_name" type="text">
         <label for="">Image Path</label>
         <input id="image_path" name="image_path" type="text">
+        <label for="">Gender</label>
+        <input id="gender" name="gender" type="text">
         <label for="">Quantity</label>
         <input id="quantity" name="quantity" type="text">
         <label for="">Unit Price</label>
@@ -129,11 +132,12 @@ echo $buffer;
                 name: $("#product_name").val(),
                 image: $("#image_path").val(),
                 quantity: $("#quantity").val(),
+                gender: $("#gender").val(),
                 price: $("#unit_price").val(),
                 subcategory: $("#sub_category_id").val(),
                 description: $("#product_description").val()
             };
-            if (product_details.name == "" | product_details.image == "" | product_details.quantity == "" | product_details.price == "" | product_details.subcategory == "" | product_details.description == "") {
+            if (product_details.name == "" | product_details.gender == "" | product_details.image == "" | product_details.quantity == "" | product_details.price == "" | product_details.subcategory == "" | product_details.description == "") {
                 $("#error").css('display', 'flex')
                 $("#error_text").html("Please ensure all fields are filled");
 
@@ -142,6 +146,7 @@ echo $buffer;
                 var data = {
                     'product_name': product_details.name,
                     'product_image': product_details.image,
+                    'Gender': product_details.gender,
                     'available_quantity': product_details.quantity,
                     'unit_price': product_details.price,
                     'subcategory_id': product_details.subcategory,
@@ -205,6 +210,7 @@ echo $buffer;
                             "<tr>" +
                             "<td>" + value.product_id + "</td>" +
                             "<td>" + value.product_name + "</td>" +
+                            "<td>" + value.target_gender + "</td>" +
                             "<td>" + value.available_quantity + "</td>" +
                             "<td>" + value.unit_price + "</td>" +
                             "<td>" + value.product_description + "</td>" +

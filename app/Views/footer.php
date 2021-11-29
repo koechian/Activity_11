@@ -8,27 +8,38 @@
         loadProducts()
 
         function loadProducts() {
+            var data = {
+                identifier: $("#gender").val()
+            }
             $.ajax({
                 url: "<?php echo base_url('Admin/getProducts') ?>",
                 method: "GET",
+                data: data,
                 success: function(response) {
-                    $.each(response.products, function(key, value) {
+                    if (response.products == "") {
                         $('.cards_wrapper').append(
-                            "<div class='cards'><img src='" + value.product_image + "'>" +
-                            "<h4>" + value.product_name + "</h4>" +
-                            "<p>" + value.product_description + "</p>" +
-                            "<span class='price_tag'>Ksh." + value.unit_price + " &nbsp</span>" +
-                            "<button id='buy' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
-                            "</div>"
-                        );
-                    });
+                            "<div class='error_message'><h1>Sorry, It may seem our very incompetent Web Developer Ian has messed up somewhere again😒</div>");
+
+                    } else {
+                        $.each(response.products, function(key, value) {
+                            $('.cards_wrapper').append(
+                                "<div class='cards'><img loading='lazy' src='" + value.product_image + "'>" +
+                                "<h4>" + value.product_name + "</h4>" +
+                                "<p>" + value.product_description + "</p>" +
+                                "<span class='price_tag'>Ksh." + value.unit_price + " &nbsp</span>" +
+                                "<button id='buy' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
+                                "</div>"
+                            );
+                        });
+                    }
                 }
             });
         }
         $('#search').keyup(function() {
             $('#search_results').css('display', 'flex');
             var data = {
-                data: $("#search").val()
+                data: $("#search").val(),
+                identifier: $("#gender").val()
             }
             $.ajax({
                 url: "<?php echo base_url('Pages/search') ?>",

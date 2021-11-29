@@ -51,8 +51,9 @@ class Admin extends BaseController
         $subcategory_id = $this->request->getPost('subcategory_id');
         $product_description = $this->request->getPost('product_description');
         $added_by = $this->request->getPost('added_by');
+        $gender = $this->request->getPost('gender');
 
-        $result = $product->newProduct($productname, $product_image, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by);
+        $result = $product->newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by);
 
         try {
             if ($result) {
@@ -73,8 +74,9 @@ class Admin extends BaseController
     }
     public function getProducts()
     {
+        $identifier = $_GET['identifier'];
         $products = new ProductsModel();
-        $result['products'] = $products->getProducts();
+        $result['products'] = $products->getProducts($identifier);
 
         return $this->response->setJSON($result);
     }

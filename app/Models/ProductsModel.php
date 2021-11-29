@@ -23,19 +23,19 @@ class ProductsModel extends Model
 
         return $res->getResultArray();
     }
-    public function newProduct($productname, $product_image, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by)
+    public function newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by)
     {
         $db = db_connect();
 
-        $res = $db->query("INSERT INTO tbl_product (product_name,product_image,available_quantity,unit_price,subcategory_id,product_description,added_by)VALUES('$productname','$product_image','$available_quantity','$unit_price','$subcategory_id','$product_description','$added_by')");
+        $res = $db->query("INSERT INTO tbl_product (product_name,product_image,target_gender,available_quantity,unit_price,subcategory_id,product_description,added_by)VALUES('$productname','$product_image','$gender','$available_quantity','$unit_price','$subcategory_id','$product_description','$added_by')");
 
         return $res;
     }
-    public function getProducts()
+    public function getProducts($identifier)
     {
         $db = db_connect();
 
-        $res = $db->query("SELECT * FROM tbl_product");
+        $res = $db->query("SELECT * FROM tbl_product WHERE target_gender='$identifier'");
 
         return $res->getResultArray();
     }

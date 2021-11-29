@@ -293,3 +293,14 @@ div p span {
   color: #ac0000;
   cursor: pointer;
 }
+.error_message{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+font-size: 20px;
+text-align: center;
+border-radius: 10px;
+border: solid 0.5px #e7e7ee;
+box-shadow: none !important;
+margin-left: 20%;
+margin-top: 10%;
+color:#414141 ;
+}

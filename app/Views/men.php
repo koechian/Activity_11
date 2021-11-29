@@ -49,8 +49,8 @@ echo $buffer;
         <hr class="filter-hr">
     </div>
     <div class="cards_wrapper">
-
     </div>
+    <input value='men' id="gender" type="hidden">
 </section>
 <?php
 include('footer.php');

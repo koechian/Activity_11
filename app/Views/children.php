@@ -41,8 +41,8 @@
             </div>
             <hr class="filter-hr">
         </div>
+        <input id="gender" value="children" type="hidden">
         <div class="cards_wrapper">
-
         </div>
     </section>
     <?php

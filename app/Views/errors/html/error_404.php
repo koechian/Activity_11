@@ -15,7 +15,7 @@
   <div class="wrapper">
     <p id="error_text">ERROR 404</p>
     <p>
-      Sorry,our bad. We may or may not <br />behaving that page at the moment.
+      Sorry,our bad. This seems to be a dead end...
     </p>
     <div class="home">
       <span>Country Road...</span>
