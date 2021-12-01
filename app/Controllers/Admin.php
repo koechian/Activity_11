@@ -80,6 +80,13 @@ class Admin extends BaseController
 
         return $this->response->setJSON($result);
     }
+    public function dispProducts()
+    {
+        $products = new ProductsModel();
+        $result['products'] = $products->dispProducts();
+
+        return $this->response->setJSON($result);
+    }
     public function deleteProduct()
     {
         $id = $this->request->getPost('product_id');

@@ -39,6 +39,14 @@ class ProductsModel extends Model
 
         return $res->getResultArray();
     }
+    public function dispProducts()
+    {
+        $db = db_connect();
+
+        $res = $db->query("SELECT * FROM tbl_product");
+
+        return $res->getResultArray();
+    }
     public function deleteProduct($id)
     {
         $db = db_connect();

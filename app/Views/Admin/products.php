@@ -65,7 +65,7 @@ echo $buffer;
         <h2>Add New Product</h2>
         <label for="">Product Name</label>
         <input id="product_name" name="product_name" type="text">
-        <label for="">Image Path</label>
+        <label for="">Image Name</label>
         <input id="image_path" name="image_path" type="text">
         <label for="">Gender</label>
         <input id="gender" name="gender" type="text">
@@ -128,9 +128,10 @@ echo $buffer;
             }
         });
         $("#new-product").click(function() {
+            var path = '/Assets/products/'
             var product_details = {
                 name: $("#product_name").val(),
-                image: $("#image_path").val(),
+                image: path + $("#image_path").val(),
                 quantity: $("#quantity").val(),
                 gender: $("#gender").val(),
                 price: $("#unit_price").val(),
@@ -146,7 +147,7 @@ echo $buffer;
                 var data = {
                     'product_name': product_details.name,
                     'product_image': product_details.image,
-                    'Gender': product_details.gender,
+                    'gender': product_details.gender,
                     'available_quantity': product_details.quantity,
                     'unit_price': product_details.price,
                     'subcategory_id': product_details.subcategory,
@@ -202,7 +203,7 @@ echo $buffer;
 
         function loadProducts() {
             $.ajax({
-                url: "<?php echo base_url('Admin/getProducts') ?>",
+                url: "<?php echo base_url('Admin/dispProducts') ?>",
                 method: "GET",
                 success: function(response) {
                     $.each(response.products, function(key, value) {
