@@ -13,7 +13,7 @@ class RegistrationModel extends Model
     function register($firstname, $lastname, $email, $password, $gender)
     {
         $db = db_connect();
-        $role = 5;
+        $role = 2;
 
         $res = $db->query("INSERT INTO tbl_users (first_name,last_name,email,password,gender,role)VALUES('$firstname','$lastname','$email','$password','$gender','$role')");
 

@@ -48,7 +48,7 @@
             <label for="confirm">Confirm Password</label>
             <input id="cpass" type="password">
             <label for="gender">Gender</label>
-            <select name="" id="">
+            <select id="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
@@ -83,7 +83,7 @@
                             $('#error_tag').text(is_empty);
                             $('#email').css('border', '1px solid #FCB9B2');
                         } else {
-                            if ($.trim($('#password').val()) = !$.trim($('#cpass').val())) {
+                            if ($.trim($('#password').val()) != $.trim($('#cpass').val())) {
                                 is_empty = 'Passwords do not match';
                                 $('#error_tag').text(is_empty);
                                 $('#email').css('border', '1px solid #FCB9B2');

@@ -28,7 +28,6 @@ class Register extends BaseController
                 echo 1;
             }
         } catch (\Throwable $th) {
-            //throw $th;
             echo $th->getMessage();
         }
     }
