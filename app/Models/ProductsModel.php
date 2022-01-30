@@ -114,7 +114,7 @@ class ProductsModel extends Model
     {
         $db = db_connect();
 
-        $query = "UPDATE tbl_categories SET is_deleted = 1  WHERE category_id = $id";
+        $query = "DELETE FROM tbl_categories WHERE category_id = $id";
         $status = $db->query($query);
 
         return $query;
@@ -191,19 +191,6 @@ class ProductsModel extends Model
         return $status->getResultArray();
     }
 
-    public function checkproduct($product, $customer)
-    {
-        $db = db_connect();
-
-        $status = $db->query("SELECT * FROM tbl_cart WHERE product_id='$product' AND user_id='$customer'");
-        $row = $status->getResultArray();
-
-        if (count($row)) {
-            return count($row);
-        } else {
-            return 'okay';
-        }
-    }
     public function order($product, $customer)
 
     {

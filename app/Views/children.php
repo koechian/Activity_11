@@ -1,5 +1,5 @@
     <?php ob_start();
-    include('header.php');
+    include('Includes/header.php');
     $buffer = ob_get_contents();
     ob_end_clean();
 
@@ -46,5 +46,5 @@
         </div>
     </section>
     <?php
-    include('footer.php');
+    include('Includes/footer.php');
     ?>

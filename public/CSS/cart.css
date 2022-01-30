@@ -1,3 +1,4 @@
+
 .reciept-wrapper {
   margin-left: 50px;
   margin-right: 50px;
@@ -34,6 +35,8 @@
   height: 600px;
   right: 150px;
   background-color: #fff;
+  position: sticky;
+  top: 100px;
 }
 .reciept-aside * {
   margin-left: 10px;
@@ -55,7 +58,7 @@
   font-size: 18px;
   color: rgb(105, 105, 105);
 }
-.reciept-aside button {
+.button {
   border-radius: 3px;
   background: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -68,7 +71,7 @@
   border: none;
   transition: ease 0.3s;
 }
-.reciept-aside button:hover {
+.button:hover {
   background: rgb(31, 31, 31);
   color: white;
 }
@@ -100,6 +103,7 @@
 }
 .item {
   display: flex;
+  margin-bottom: 50px;
 }
 .item div:nth-of-type(1) {
   height: 350px;
@@ -133,4 +137,45 @@
 }
 .item div button:hover {
   color: rgba(156, 99, 46, 0.829);
+}
+.wallet-icon{
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: -100px;
+  top: 7px;
+  color: rgb(56, 56, 56);
+}
+
+.wallet-icon:hover{
+  cursor: pointer;
+}
+.hide{
+  display: none;
+}
+.flex{
+  display: flex;
+}
+.wallet-box {
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 20%);
+    position: absolute;
+    right: 2vw;
+    top: 8vw;
+    flex-direction: column;
+    z-index: 99;
+    padding: 10px;
+    padding-bottom: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.wallet-box h2,.wallet-box h3 {
+  color: rgb(82, 82, 82);
+    font-size: 18px;
+}
+.wallet-box input{
+  border: none;
+  border-bottom: rgb(37, 37, 37) solid 1px;
 }

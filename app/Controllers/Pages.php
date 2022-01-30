@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProductsModel;
+use App\Models\UserModel;
+
 
 class Pages extends BaseController
 {
@@ -35,6 +37,10 @@ class Pages extends BaseController
     {
         return view('cart');
     }
+    function checkout()
+    {
+        return view('checkout');
+    }
     public function search()
     {
         $search_term = $_GET['data'];
@@ -48,17 +54,14 @@ class Pages extends BaseController
         $customer = $this->request->getPost('customer');
 
         $newOrder = new ProductsModel();
-        if ($newOrder->checkproduct($product, $customer) == 'okay') {
-            $result = $newOrder->order($product, $customer);
-            try {
-                if ($result) {
-                    echo 1;
-                }
-            } catch (\Throwable $th) {
-                echo $th->getMessage();
+
+        $result = $newOrder->order($product, $customer);
+        try {
+            if ($result) {
+                echo 1;
             }
-        } else {
-            echo 'duplicate';
+        } catch (\Throwable $th) {
+            echo $th;
         }
     }
     public function fetchCart()
@@ -124,5 +127,23 @@ class Pages extends BaseController
         } else {
             return $result;
         }
+    }
+    public function getWalletbalance()
+    {
+        $customer_id = $this->request->getPost('userid');
+        $model = new UserModel();
+        $result = $model->getWalletbalance($customer_id);
+
+        return $this->response->setJSON($result);
+    }
+    public function updateWalletbalance()
+    {
+        $customer_id = $this->request->getPost('userid');
+        $amount_available = $this->request->getPost('amount_available');
+
+        $model = new UserModel();
+        $result = $model->updateWalletbalance($customer_id, $amount_available);
+
+        return $this->response->setJSON($result);
     }
 }

@@ -28,7 +28,7 @@
                                 "<h4 id='product-name'>" + value.product_name + "</h4>" +
                                 "<p>" + value.product_description + "</p>" +
                                 "<span class='price_tag'>Ksh." + value.unit_price + " &nbsp</span>" +
-                                "<button id='buy' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
+                                "<button id='buy-item' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
                                 "</div>"
                             );
                         });
@@ -90,11 +90,10 @@
             })
         })
     })
-    $(document).on('click', '#buy', function() {
+    $(document).on('click', '#buy-item', function() {
         var details = {
             'productid': $(this).data('id'),
-            'customer': $('#userid').val(),
-            'product_name': $(this).parent().parent().find('#product-name').html()
+            'customer': $('#userid').val()
         };
         console.log(details);
         $.ajax({
@@ -107,7 +106,6 @@
                 } else if (result == 'duplicate') {
                     alert('This item has already been added to the cart');
                 } else {
-                    console.log(result)
                     alert('an unexpected error has been encountered');
                 }
 

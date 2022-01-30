@@ -121,4 +121,20 @@ class Admin extends BaseController
             echo $th->getMessage();
         }
     }
+    public function editCategory()
+    {
+        $id = $this->request->getPost('category_id');
+        $categories = new ProductsModel();
+        $result = $categories->deleteCategory($id);
+
+        try {
+            if ($result) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+    }
 }

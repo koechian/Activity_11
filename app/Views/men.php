@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include('header.php');
+include('Includes/header.php');
 $buffer = ob_get_contents();
 ob_end_clean();
 
@@ -53,5 +53,5 @@ echo $buffer;
     <input value='male' id="gender" type="hidden">
 </section>
 <?php
-include('footer.php');
+include('Includes/footer.php');
 ?>

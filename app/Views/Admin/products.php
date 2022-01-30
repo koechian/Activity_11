@@ -191,7 +191,7 @@ echo $buffer;
                             "<tr>" +
                             "<td>" + value.category_id + "</td>" +
                             "<td>" + value.category_name + "</td>" +
-                            "<td><button id='delete_category_btn' class='delete' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit' class='edit'" + value.category_id + "'>Edit</button></td>" +
+                            "<td><button id='delete_category_btn' class='delete' data-id='" + value.category_id + "'>Delete</button> &nbsp &nbsp<button id='edit-category' class='edit' data-id='" + value.category_id + "'>Edit</button></td>" +
                             "</tr>"
                         );
 
@@ -200,6 +200,7 @@ echo $buffer;
 
             });
         }
+
 
         function loadProducts() {
             $.ajax({
@@ -211,7 +212,7 @@ echo $buffer;
                             "<tr>" +
                             "<td>" + value.product_id + "</td>" +
                             "<td>" + value.product_name + "</td>" +
-                            "<td>" + value.target_gender + "</td>" +
+                            "<td>" + value.gender + "</td>" +
                             "<td>" + value.available_quantity + "</td>" +
                             "<td>" + value.unit_price + "</td>" +
                             "<td>" + value.product_description + "</td>" +
