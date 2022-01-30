@@ -10,7 +10,7 @@ class LoginModel extends Model
     {
         parent::__construct();
     }
-    function checkin($email, $password)
+    function login($email, $password)
     {
         $db = db_connect();
 

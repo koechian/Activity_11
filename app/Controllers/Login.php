@@ -11,26 +11,30 @@ class Login  extends BaseController
     {
         return view('login');
     }
-    public function login()
+    function login()
     {
-        $session = session();
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $login = new LoginModel();
-
-        $result = $login->checkin($email, $password);
+        $userModel = new LoginModel();
+        $result = $userModel->login($email, $password);
 
         try {
-            if (count($result) > 1) {
+            if (count($result) > 0) {
+                $name = $result['first_name'];
+                $userid = $result['user_id'];
+                $userdata = [
+                    'name' => $name,
+                    'userid' => $userid
+                ];
+                $session = session();
+                $session->set($userdata);
                 echo 1;
-                $username = $result['first_name'];
-                $session->set('name', $username);
             } else {
                 echo 2;
             }
         } catch (\Throwable $th) {
-            echo $th->getMessage();
+            echo 3;
         }
     }
     public function logout()

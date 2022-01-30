@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\ProductsModel;
+use App\Models\UserModel;
+
 
 class Admin extends BaseController
 {
@@ -20,7 +22,7 @@ class Admin extends BaseController
     }
     public function getUsers()
     {
-        $users = new UsersModel();
+        $users = new UserModel();
         $result['users'] = $users->getUsers();
 
         return $this->response->setJSON($result);

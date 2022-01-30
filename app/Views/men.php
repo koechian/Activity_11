@@ -50,7 +50,7 @@ echo $buffer;
     </div>
     <div class="cards_wrapper">
     </div>
-    <input value='men' id="gender" type="hidden">
+    <input value='male' id="gender" type="hidden">
 </section>
 <?php
 include('footer.php');

@@ -1,5 +1,6 @@
 <button id="back-to-top" onclick="start('back-to-top')">Back</button>
-</body>
+<input id="userid" value="<?php $session = session();
+                            echo ($session->get('userid')); ?>" type="hidden"></body>
 <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 <script src="/Javascript/jquery.js"></script>
 <script src="/Javascript/pages.js"></script>
@@ -24,7 +25,7 @@
                         $.each(response.products, function(key, value) {
                             $('.cards_wrapper').append(
                                 "<div class='cards'><img loading='lazy' src='" + value.product_image + "'>" +
-                                "<h4>" + value.product_name + "</h4>" +
+                                "<h4 id='product-name'>" + value.product_name + "</h4>" +
                                 "<p>" + value.product_description + "</p>" +
                                 "<span class='price_tag'>Ksh." + value.unit_price + " &nbsp</span>" +
                                 "<button id='buy' class='buy' data-id='" + value.product_id + "'>Add to Cart</button>" +
@@ -87,6 +88,30 @@
                     }
                 }
             })
+        })
+    })
+    $(document).on('click', '#buy', function() {
+        var details = {
+            'productid': $(this).data('id'),
+            'customer': $('#userid').val(),
+            'product_name': $(this).parent().parent().find('#product-name').html()
+        };
+        console.log(details);
+        $.ajax({
+            url: "<?php echo base_url('Pages/addtoCart') ?>",
+            method: 'post',
+            data: details,
+            success: function(result) {
+                if (result == 1) {
+                    alert('Product Added to Cart');
+                } else if (result == 'duplicate') {
+                    alert('This item has already been added to the cart');
+                } else {
+                    console.log(result)
+                    alert('an unexpected error has been encountered');
+                }
+
+            }
         })
     })
 </script>

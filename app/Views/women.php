@@ -45,7 +45,7 @@ echo $buffer; ?>
         </div>
         <hr class="filter-hr">
     </div>
-    <input id="gender" value="females" type="hidden">
+    <input id="gender" value="female" type="hidden">
     <div class="cards_wrapper">
 
     </div>
