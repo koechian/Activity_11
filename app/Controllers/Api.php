@@ -90,7 +90,7 @@ class Api extends BaseController
 
         return $this->response->setJson($result);
     }
-    function fetchUserPurchases()
+    function userPurchases()
     {
         $token = $this->request->getVar('token');
         $model = new APIModel();
@@ -155,6 +155,6 @@ class Api extends BaseController
         $session = session();
         $session->destroy();
 
-        return 1;
+        echo 1;
     }
 }

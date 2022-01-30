@@ -29,6 +29,7 @@
         <ul>
             <li><span onclick="revealLogin()" class="span-button" id="reveal-login">Login</span></li>
             <li><span onclick="revealRegister()" class="span-button" id="reveal-registration">Register</span></li>
+            <li><span onclick="logout()" id="logout" class="span-button">Logout</span></li>
         </ul>
     </header>
     <div class="floating login-box hide">
@@ -116,7 +117,7 @@
                         <td>Fetch all Users Filtered By Gender</td>
                         <td>Token,Gender</td>
                         <td>POST</td>
-                        <td>http://localhost:8080/Api/userListByGender</td>
+                        <td>http://localhost:8080/Api/userListGender</td>
                     </tr>
                     <tr>
                         <td>Fetch User Purchases</td>
@@ -134,6 +135,19 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    function logout() {
+        $.ajax({
+            url: "<?php echo base_url('Api/logout') ?>",
+            method: 'POST',
+            data: null,
+            success: function(result) {
+                if (result == 1) {
+                    window.location.reload();
+                }
+            }
+        })
+    }
+
     function revealLogin() {
         $('.login-box').removeClass('hide').addClass('flex')
         $('.register-box').removeClass('flex').addClass('hide')
