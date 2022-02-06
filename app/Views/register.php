@@ -101,7 +101,7 @@
                                     data: data,
                                     success: function(result) {
                                         if (result == 1) {
-                                            console.log('A')
+                                            window.location.replace('<?php echo site_url('Login') ?>')
                                         } else {
                                             console.log('Balaa')
                                         }

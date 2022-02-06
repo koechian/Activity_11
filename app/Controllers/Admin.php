@@ -52,10 +52,9 @@ class Admin extends BaseController
         $unit_price = $this->request->getPost('unit_price');
         $subcategory_id = $this->request->getPost('subcategory_id');
         $product_description = $this->request->getPost('product_description');
-        $added_by = $this->request->getPost('added_by');
         $gender = $this->request->getPost('gender');
 
-        $result = $product->newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by);
+        $result = $product->newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description);
 
         try {
             if ($result) {

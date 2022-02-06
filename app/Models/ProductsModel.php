@@ -23,11 +23,11 @@ class ProductsModel extends Model
 
         return $res->getResultArray();
     }
-    public function newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description, $added_by)
+    public function newProduct($productname, $product_image, $gender, $available_quantity, $unit_price, $subcategory_id, $product_description)
     {
         $db = db_connect();
 
-        $res = $db->query("INSERT INTO tbl_products (product_name,product_image,target_gender,available_quantity,unit_price,subcategory_id,product_description,added_by)VALUES('$productname','$product_image','$gender','$available_quantity','$unit_price','$subcategory_id','$product_description','$added_by')");
+        $res = $db->query("INSERT INTO tbl_products (product_name,product_image,gender,available_quantity,unit_price,subcategory_id,product_description)VALUES('$productname','$product_image','$gender','$available_quantity','$unit_price','$subcategory_id','$product_description')");
 
         return $res;
     }
@@ -178,7 +178,7 @@ class ProductsModel extends Model
     public function deleteProduct($id)
     {
         $db = db_connect();
-        $status = $db->query("UPDATE tbl_products SET is_deleted = 1 WHERE product_id = $id");
+        $status = $db->query("DELETE FROM tbl_products WHERE product_id = $id");
 
         return $status;
     }
